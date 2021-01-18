@@ -1,9 +1,11 @@
 let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, text }) => {
+  if (!text) return
   let cm = copy(m)
   let who
   if (m.isGroup) who = cm.participant = m.mentionedJid[0]
   else who = m.chat
+  if (!who) throw 'Tag salah satu lah'
   cm.key.fromMe = false
   cm.message[m.mtype] = copy(m.msg)
   txt = text.replace('@' + who.split`@`[0], '').trimStart()
