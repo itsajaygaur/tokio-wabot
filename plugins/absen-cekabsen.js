@@ -1,7 +1,10 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let id = m.chat
     conn.absen = conn.absen ? conn.absen : {}
-    if (!(id in conn.absen)) throw `_*Tidak ada absen berlangsung digrup ini!*_\n\n*${usedPrefix}mulaiabsen* - untuk memulai absen`
+    if (!(id in conn.absen)) {
+        await conn.sendButton(m.chat, `Tidak ada absen berlangsung!`, '© stikerin', 'Mulai', `${usedPrefix}mulaiabsen`, m)
+        throw false
+    }
 
     let d = new Date
     let date = d.toLocaleDateString('id', {
@@ -10,23 +13,18 @@ let handler = async (m, { conn, usedPrefix }) => {
         year: 'numeric'
     })
     let absen = conn.absen[id][1]
-    let list = absen.map((v, i) => `│ ${i + 1}. @${v.split`@`[0]}`).join('\n')
-    conn.reply(m.chat, `*「 ABSEN 」*
-
+    let list = absen.map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')
+    let caption = `
 Tanggal: ${date}
 ${conn.absen[id][2]}
-
-┌ *Yang sudah absen:*
-│ 
-│ Total: ${absen.length}
+┌〔 daftar absen 〕
+├ Total: ${absen.length}
 ${list}
-│ 
-└────
-
-_by Ariffb_`, m, { contextInfo: { mentionedJid: absen } })
+└────`.trim()
+    await conn.send2Button(m.chat, caption, '© stikerin', 'Absen', `${usedPrefix}absen`, 'Hapus', `${usedPrefix}hapusabsen`, m, { contextInfo: { mentionedJid: conn.parseMention(caption) } })
 }
 handler.help = ['cekabsen']
 handler.tags = ['absen']
 handler.command = /^cekabsen$/i
-handler.group = true
+
 module.exports = handler
