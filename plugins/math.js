@@ -18,7 +18,7 @@ Usage examples: ${usedPrefix}math medium
     await conn.reply(m.chat, `What is the result of *${math.str}*?\n\nTimeout: ${(math.time / 1000).toFixed(2)} seconds\nCorrect Answer Bonus: ${math.bonus} XP`, m),
     math, 4,
     setTimeout(() => {
-      if (conn.math[id]) conn.reply(m.chat, `Time has run out!\nJthe answer is ${math.result}`, conn.math[id][0])
+      if (conn.math[id]) conn.reply(m.chat, `Time has run out!\nthe answer is ${math.result}`, conn.math[id][0])
       delete conn.math[id]
     }, math.time)
   ]
