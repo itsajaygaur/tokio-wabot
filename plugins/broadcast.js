@@ -2,9 +2,9 @@ let handler  = async (m, { conn, text }) => {
   let chats = conn.chats.all().filter(v => !v.read_only && v.message && !v.archive).map(v => v.jid)
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   let teks = text ? text : cc.text
-  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
+  conn.reply(m.chat, `_Send a broadcast message to ${chats.length} chat_`, m)
   for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 All Chat Broadcast 」\n' + randomID(32)), true).catch(_=>_)
-  m.reply('Selesai Broadcast All Chat :)')
+  m.reply('Broadcast done for All Chat :)')
 }
 handler.help = ['broadcast','bc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
