@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'Uhm... where is the url??'
-  let res = await fetch(global.API('xteam', '/dl/ig', {
+  let res = await fetch(global.API('zeks', '/dl/ig', {
     url: args[0]
   }, 'APIKEY'))
   if (res.status !== 200) {
