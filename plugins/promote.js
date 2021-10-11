@@ -7,7 +7,7 @@ handler.help = ['promote','admin','^', '↑'].map(v => v + ' @user')
 handler.tags = ['admin']
 
 handler.command = /^(promote|admin|\^|↑)$/i
-
+handler.owner = false
 handler.group = true
 
 handler.admin = true
