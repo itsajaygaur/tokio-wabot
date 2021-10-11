@@ -31,15 +31,15 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-Menunggu @${room.game.currentTurn.split('@')[0]}
-type *nyerah* to give up
+Waiting @${room.game.currentTurn.split('@')[0]}
+type *giveup* to give up
 `.trim()
-        if (room.x !== room.o) await this.sendButton(room.x, str, author, 'Nyerah', 'nyerah', m, {
+        if (room.x !== room.o) await this.sendButton(room.x, str, author, 'Giveup', 'giveup', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
         })
-        await this.sendButton(room.o, str, author, 'Nyerah', 'nyerah', m, {
+        await this.sendButton(room.o, str, author, 'Giveup', 'giveup', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
