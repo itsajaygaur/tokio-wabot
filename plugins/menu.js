@@ -31,23 +31,23 @@ let tags = {
 const defaultMenu = {
   before: `
 
-Hi %name!
+Hi👋🏻 %name
 
-Remaining *%limit Limit*
-Role *%role*
-Level *%level (%exp / %maxexp)* [%xp4levelup again for levelup]
-%totalexp XP in Total
+Remaining:  *%limit Limit*
+Role:       *%role*
+Level:      *%level 
+Total XP:   %totalexp XP
 
-Uptime: *%uptime (%muptime)*
-Database: %rtotalreg of %totalreg
+Uptime:     *%uptime (%muptime)*
+Database:   %rtotalreg of %totalreg
+
+All commands are listed below 👇🏻
 
 %readmore`.trimStart(),
-  header: ' 「 %category 」',
+  header: ' *「 %category 」*',
   body: ' • %cmd %islimit %isPremium',
   footer: ' ',
-  after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
+  after: `Have a great day ahead 🌻
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
