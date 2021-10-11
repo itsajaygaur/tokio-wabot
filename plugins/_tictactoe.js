@@ -13,9 +13,9 @@ handler.before = async function (m) {
     let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
     if (room) {
         // m.reply(`[DEBUG]\n${parseInt(m.text)}`)
-        if (!/^([1-9]|(me)?nyerah|surr?ender)$/i.test(m.text)) return !0
+        if (!/^([1-9]|(me)?giveup|surr?ender)$/i.test(m.text)) return !0
         isSurrender = !/^[1-9]$/.test(m.text)
-        if (m.sender !== room.game.currentTurn) { // nek wayahku
+        if (m.sender !== room.game.currentTurn) { // my grandma
             if (!isSurrender) return !0
         }
         if (debugMode) m.reply('[DEBUG]\n' + require('util').format({
@@ -61,18 +61,18 @@ ${isWin ? `@${winner.split('@')[0]} Win! (+${winScore} XP)` : isTie ? `Game Over
 
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
-Type *nyerah* to giveup
+Type *giveup* to giveup
 Room ID: ${room.id}
 `.trim()
         let users = global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        if (room.x !== room.o) await this.sendButton(room.x, str, author, 'Nyerah', 'nyerah', m, {
+        if (room.x !== room.o) await this.sendButton(room.x, str, author, 'Giveup', 'giveup', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
         })
-        await this.sendButton(room.o, str, author, 'Nyerah', 'nyerah', m, {
+        await this.sendButton(room.o, str, author, 'Giveup', 'giveup', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
