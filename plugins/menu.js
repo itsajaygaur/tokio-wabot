@@ -46,9 +46,9 @@ All commands are listed below 👇🏻
 
 %readmore`.trimStart(),
   header: ' *「 %category 」*',
-  body: ' • %cmd %islimit %isPremium',
+  body: ' ❏ %cmd %islimit %isPremium',
   footer: ' ',
-  after: `*Have a great day ahead* 🌻
+  after: `*Hope you're enjoying the bot, have a great day* 🌻
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
