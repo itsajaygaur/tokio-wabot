@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
-  let res = await fetch(global.API('nrtm', '/api/wiki', { q: text }, 'apikey'))
+  let res = await fetch(global.API('zeks', '/api/wiki', { q: text }, 'apikey'))
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.result.result) throw 'Error!'
