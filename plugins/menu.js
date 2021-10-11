@@ -38,6 +38,7 @@ Role: *%role*
 Level: *%level* 
 Total XP: *%totalexp*
 
+Prefix: *Multi*
 Uptime: *%uptime (%muptime)*
 Database: *%rtotalreg of %totalreg*
 
