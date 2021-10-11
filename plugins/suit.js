@@ -1,6 +1,6 @@
 let handler = async (m, { text, usedPrefix }) => {
     let poin = 300
-    let salah = `Available options Scissors, Paper, Rock\n\n*Example* : ${usedPrefix}suit scissor\n`
+    let wrong = `Available options Scissors, Paper, Rock\n\n*Example* : ${usedPrefix}suit scissor\n`
     if (!text) throw wrong
     var suit = Math.random()
 
@@ -15,30 +15,30 @@ let handler = async (m, { text, usedPrefix }) => {
     //menentukan rules
     if (text == suit) {
       global.db.data.users[m.sender].exp += 100
-        m.reply(`*we draw*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (±)100 XP`)
+        m.reply(`*we draw*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (±)100 XP`)
     } else if (text == 'rock') {
         if (suit == 'scissor') {
             global.db.data.users[m.sender].exp += 300
-            m.reply(`*You win*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
+            m.reply(`*You win*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
         } else {
           global.db.data.users[m.sender].exp -= 300
-            m.reply(`*You lose*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
+            m.reply(`*You lose*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
         }
     } else if (text == 'scissor') {
         if (suit == 'paper') {
             global.db.data.users[m.sender].exp += 300
-            m.reply(`*You win*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
+            m.reply(`*You win*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
         } else {
           global.db.data.users[m.sender].exp -= 300
-            m.reply(`*You lose*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
+            m.reply(`*You lose*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
         }
     } else if (text == 'paper') {
         if (suit == 'rock') {
             global.db.data.users[m.sender].exp += 300
-            m.reply(`*You win*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
+            m.reply(`*You win*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
         } else {
           global.db.data.users[m.sender].exp -= 300
-            m.reply(`*You lose*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
+            m.reply(`*You lose*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
         }
     } else {
         throw wrong
