@@ -31,16 +31,16 @@ let tags = {
 const defaultMenu = {
   before: `
 
-Hi %name 👋🏻
+Hi %name 👋🏻 I am %me, how can i help you? 🥀
 
-Left: *%limit Limit*
-Role: *%role*
-Level: *%level* 
-Total XP: *%totalexp*
+🔖Left: *%limit Limit*
+🔰Role: *%role*
+📈Level: *%level* 
+🎯Total XP: *%totalexp*
 
-Prefix: *Multi*
-Uptime: *%uptime (%muptime)*
-Database: *%rtotalreg of %totalreg*
+💹Prefix: *Multi*
+⏱️Uptime: *%uptime (%muptime)*
+⛓️Database: *%rtotalreg of %totalreg*
 
 All commands are listed below 👇🏻
 
