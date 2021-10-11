@@ -33,13 +33,13 @@ const defaultMenu = {
 
 Hi %name 👋🏻
 
-*Left: %limit Limit*
-*Role: %role*
-*Level: %level* 
-*Total XP: %totalexp XP*
+Left: *%limit Limit*
+Role: *%role*
+Level: *%level* 
+Total XP: *%totalexp*
 
-*Uptime: %uptime (%muptime)*
-*Database: %rtotalreg of %totalreg*
+Uptime: *%uptime (%muptime)*
+Database: *%rtotalreg of %totalreg*
 
 All commands are listed below 👇🏻
 
@@ -47,7 +47,7 @@ All commands are listed below 👇🏻
   header: ' *「 %category 」*',
   body: ' • %cmd %islimit %isPremium',
   footer: ' ',
-  after: `*_Have a great day ahead_* 🌻
+  after: `*Have a great day ahead* 🌻
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
