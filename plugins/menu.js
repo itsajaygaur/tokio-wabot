@@ -33,13 +33,13 @@ const defaultMenu = {
 
 Hi %name 👋🏻
 
-Left:            *%limit Limit*
-Role:            *%role*
-Level:           *%level* 
-Total XP:        *%totalexp XP*
+*Left: %limit Limit*
+*Role: %role*
+*Level: %level* 
+*Total XP: %totalexp XP*
 
-Uptime:          *%uptime (%muptime)*
-Database:        *%rtotalreg of %totalreg*
+*Uptime: %uptime (%muptime)*
+*Database: %rtotalreg of %totalreg*
 
 All commands are listed below 👇🏻
 
