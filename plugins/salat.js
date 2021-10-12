@@ -25,7 +25,7 @@ ${hasil}
 
 }
 handler.help = ['salat <daerah>']
-handler.tags = ['quran']
+handler.tags = ['Only for Indonesians']
 handler.command = /^(jadwal)?s(a|o|ha|ho)lat$/i
 
 module.exports = handler
