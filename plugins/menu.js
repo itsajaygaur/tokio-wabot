@@ -31,16 +31,17 @@ let tags = {
 const defaultMenu = {
   before: `
 
-Hi %name 👋🏻 I am %me, how can i help you? 🥀
+👋🏻(❤️ω❤️) Ohayō %name 
+I am %me, how can i help you? 🥀
 
 🔖Left: *%limit Limit*
 🔰Role: *%role*
 📈Level: *%level* 
 🎯Total XP: *%totalexp*
 
-💹Prefix: *Multi*
+💹Prefix: *%p*
 ⏱️Uptime: *%uptime (%muptime)*
-⛓️Database: *%rtotalreg of %totalreg*
+📊Database: *%rtotalreg of %totalreg*
 
 All commands are listed below 👇🏻
 
@@ -149,7 +150,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     conn.reply(m.chat, text.trim(), m)
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
   }
 }
