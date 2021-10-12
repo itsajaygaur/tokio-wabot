@@ -22,7 +22,7 @@ let handler = async (m, { conn, text, participants }) => {
   )
   await conn.relayWAMessage(msg)
 }
-handler.help = ['announcement', 'announce', 'hidetag'].map(v => v + ' [teks]')
+handler.help = ['announcement/announce/hidetag'].map(v => v + ' [teks]')
 handler.tags = ['group']
 handler.command = /^(announcement|announce|hiddentag|hidetag)$/i
 
