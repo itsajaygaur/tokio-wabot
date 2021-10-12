@@ -2,7 +2,7 @@ const free = 500
 const prem = 5000
 let handler = async (m, { isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed your daily claim today\nwait for ${msToTime(time - new Date())} again`
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed your daily claim today\nwait for ${msToTime(time - new Date())} to claim again`
   global.db.data.users[m.sender].exp += isPrems ? prem : free
   m.reply(`+${isPrems ? prem : free} XP`)
   global.db.data.users[m.sender].lastclaim = new Date * 1
@@ -34,5 +34,5 @@ function msToTime(duration) {
   minutes = (minutes < 10) ? "0" + minutes : minutes
   seconds = (seconds < 10) ? "0" + seconds : seconds
 
-  return hours + " hour " + minutes + " minute"
+  return hours + " hours " + minutes + " minutes"
 }
