@@ -28,6 +28,6 @@ request.get({
 }
 handler.help = ['artinama'].map(v => v + ' [nama]')
 handler.tags = ['kerang']
-handler.command = ['artinama']
+handler.command = ['']
 
 module.exports = handler
