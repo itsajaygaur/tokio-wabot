@@ -16,6 +16,7 @@ let handler = async (m, { conn, args }) => {
 	}
     }
 handler.help = ['setbotpp']
+handler.tags = ['owner']
 handler.command = /^(setbotpp)$/i
 handler.owner = true
 
