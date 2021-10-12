@@ -1,6 +1,6 @@
 let handler = async (m, { text, usedPrefix }) => {
     let poin = 300
-    let wrong = `Available options Scissors, Paper, Rock\n\n*Example* : ${usedPrefix}suit scissor\n`
+    let wrong = `Available options scissor, paper, rock\n\n*Example* : ${usedPrefix}suit scissor\n`
     if (!text) throw wrong
     var suit = Math.random()
 
@@ -44,7 +44,7 @@ let handler = async (m, { text, usedPrefix }) => {
         throw wrong
     }
 }
-handler.help = ['Suit scissor/rock/paper']
+handler.help = ['suit scissor/rock/paper']
 handler.tags = ['game']
 handler.command = /^suit$/i
 handler.owner = false
