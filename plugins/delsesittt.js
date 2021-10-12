@@ -4,12 +4,12 @@ conn.game = conn.game ? conn.game : {}
 try {
 if ( conn.game = true ) {
 	delete conn.game
-	conn.reply( m.chat, `Berhasil delete session ttt`, m)
+	conn.reply( m.chat, `Successfully delete session ttt`, m)
 	} else if ( conn.game = false ) {
-		m.reply(`Session ttt🎮 tidak ada`)
+		m.reply(`Session ttt🎮 does not exist`)
 		} else throw 'ngabs'
 	} catch (e) {
-		m.reply('rusak')
+		m.reply('damaged')
 		}
 }
 	//BY RIZXYU
