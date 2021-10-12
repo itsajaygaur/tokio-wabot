@@ -27,7 +27,7 @@ request.get({
   });
 }
 handler.help = ['artinama'].map(v => v + ' [nama]')
-handlertags = ['']
+handler.tags = ['Only for Indonesians']
 handler.command = ['artinama']
 
 module.exports = handler
