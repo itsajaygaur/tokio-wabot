@@ -43,7 +43,7 @@ module.exports = {
           if (!('autolevelup' in user)) user.autolevelup = false
         } else global.db.data.users[m.sender] = {
           exp: 0,
-          limit: 10,
+          limit: 20,
           lastclaim: 0,
           registered: false,
           name: this.getName(m.sender),
