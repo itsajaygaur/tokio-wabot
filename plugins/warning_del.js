@@ -8,14 +8,14 @@ let handler = async (m, { conn, args, groupMetadata}) => {
        if (warn > 0) {
          global.db.data.users[mention].warn -= 1
          m.reply('⚠️ *WARNING -1*')
-         m.reply(`Admin mengurangi warn kamu, warn kamu sekarang ${warn - 1}`, mention)
+         m.reply(`Admin reduced your warning, your warn now ${warn - 1}`, mention)
          } else if (warn == 0) {
-            m.reply('User tidak memiliki warn')
+            m.reply('User has no warning')
         }
 } else conn.reply(m.chat, 'Tag target', m)
 }
 
-handler.help = ['Delwarn @user']
+handler.help = ['delwarn @user']
 handler.tags = ['group']
 handler.command = /^delwarn$/i
 handler.owner = false
