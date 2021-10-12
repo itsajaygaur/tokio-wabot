@@ -1,7 +1,7 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   
  await conn.groupUpdateSubject(m.chat, `${args.join(" ")}`);
-  m.reply('Sukses mengganti nama group')
+  m.reply('Success in changing group name')
 }
 
 handler.help = ['Setname <text>']
