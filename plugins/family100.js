@@ -29,7 +29,7 @@ Terdapat *${json.jawaban.length}* jawaban${json.jawaban.find(v => v.includes(' '
     }
 }
 handler.help = ['family100']
-handler.tags = ['game']
+handlertags = ['game']
 handler.command = /^family100$/i
 
 module.exports = handler
