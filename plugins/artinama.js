@@ -27,7 +27,7 @@ request.get({
   });
 }
 handler.help = ['artinama'].map(v => v + ' [nama]')
-handler.tags = ['kerang']
+handler.tags = ['']
 handler.command = ['artinama']
 
 module.exports = handler
