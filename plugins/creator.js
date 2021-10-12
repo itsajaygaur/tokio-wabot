@@ -3,7 +3,7 @@ function handler(m) {
   // F this.sendContact(m.chat, '62815158600891', 'Nurutomo', m)
   this.sendContact(m.chat, '37122222642', 'David', m)
 }
-handler.help = ['owner', 'creator']
+handler.help = ['owner/creator']
 handler.tags = ['info']
 
 handler.command = /^(owner|creator)$/i
