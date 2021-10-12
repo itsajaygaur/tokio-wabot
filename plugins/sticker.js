@@ -7,20 +7,20 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
       let img = await q.download()
-      if (!img) throw `balas gambar dengan caption *${usedPrefix + command}*`
+      if (!img) throw `reply to image with caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (/video/.test(mime)) {
-      if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
+      if ((q.msg || q).seconds > 11) return m.reply('Maximum 10 seconds!')
       let img = await q.download()
-      if (!img) throw `balas video/gif dengan caption *${usedPrefix + command}*`
+      if (!img) throw `reply video/gif with caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (/webp/.test(mime)) {
       let img = await q.download()
-      if (!img) throw `balas sticker dengan caption *${usedPrefix + command}*`
+      if (!img) throw `reply sticker with caption *${usedPrefix + command}*`
       stiker = await sticker(img, false, global.packname, global.author)
     } else if (args[0]) {
       if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
-      else return m.reply('URL tidak valid!')
+      else return m.reply('Inavlid URL!')
     }
   } finally {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
@@ -29,7 +29,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     else throw 'Conversion failed'
   }
 }
-handler.help = ['stiker (caption|reply media)', 'stiker <url>', 'stikergif (caption|reply media)', 'stikergif <url>']
+handler.help = ['sticker (caption|reply media)', 'sticker <url>', 'stickergif (caption|reply media)', 'stickergif <url>']
 handler.tags = ['sticker']
 handler.command = /^s(tic?ker)?(gif)?(wm)?$/i
 
