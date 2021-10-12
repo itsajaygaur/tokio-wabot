@@ -4,8 +4,8 @@ const { sticker } = require('../lib/sticker')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-    if (!args[0]) throw `*Perintah ini untuk mengambil stiker dari Line*\n\nContoh penggunaan:\n${usedPrefix + command} https://store.line.me/stickershop/product/8149770`
-    if (!args[0].match(/(https:\/\/store.line.me\/stickershop\/product\/.*)/gi)) throw `*Perintah ini untuk mengambil stiker dari Line*\n\nContoh penggunaan:\n${usedPrefix + command} https://store.line.me/stickershop/product/8149770`
+    if (!args[0]) throw `*This command is to retrieve stickers from Line*\n\nUsage examples:\n${usedPrefix + command} https://store.line.me/stickershop/product/8149770`
+    if (!args[0].match(/(https:\/\/store.line.me\/stickershop\/product\/.*)/gi)) throw `*This command is to retrieve stickers from Line*\n\nUsage examples:\n${usedPrefix + command} https://store.line.me/stickershop/product/8149770`
 
     let res = await fetch(global.API('xteam', '/sticker/stickerline', { url: args[0] }, 'APIKEY'))
     if (res.status !== 200) throw await res.text()
@@ -24,7 +24,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
 
 }
-handler.help = ['stikerline <url>']
+handler.help = ['stickerline <url>']
 handler.tags = ['sticker']
 handler.command = /^(stic?kerline)$/i
 
