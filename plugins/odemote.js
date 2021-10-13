@@ -6,7 +6,7 @@ let handler = async (m, { conn, participants }) => {
 handler.help = ['demote/omember/o↓'].map(v => v + ' @user')
 handler.tags = ['owner']
 
-handler.command = /^o(demote|member|↓)$/i
+handler.command = /^(odemote|omember|o↓)$/i
 
 handler.owner = true
 handler.group = true
