@@ -10,9 +10,9 @@ let handler  = async (m, { conn, text }) => {
  text,
 await conn.sendFile(m.chat, global.API('xteam', '/tahta', { text, }, 'APIKEY'), 'Throne Treasure.png', 'It\'s already become your treasure...', m)
 }
-handler.help = ['throne2'].map(v => v + '<teks>')
+handler.help = ['tahta2'].map(v => v + '<teks>')
 handler.tags = ['nulis']
-handler.command = /^throne2$/i
+handler.command = /^tahta2$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
