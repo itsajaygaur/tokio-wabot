@@ -29,7 +29,6 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
 *Filesize:* ${filesizeF}
 *Source:* ${vid.url}
  ${isLimit ? 'Used ': ''}
-*Server y2mate:* ${usedServer}
 `.trim(), m)
 let _thumb = {}
 try { if (isVideo) _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
@@ -38,7 +37,6 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *Source:* ${vid.url}
-*Server y2mate:* ${usedServer}
 `.trim(), m, false,  {
   ..._thumb,
   asDocument: chat.useDocument
