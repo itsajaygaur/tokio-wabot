@@ -20,12 +20,12 @@ Register successfully!
 
 ╭─「 Info 」
 │ Name: ${name}
-│ Age: ${age} tahun
+│ Age: ${age} 
 │ SN: ${sn}
 ╰────
 `.trim())
 }
-handler.help = ['daftar', 'reg', 'register'].map(v => v + ' <name>.<age>')
+handler.help = ['reg/register'].map(v => v + ' <name>.<age>')
 handler.tags = ['exp']
 
 handler.command = /^(daftar|reg(ister)?)$/i
