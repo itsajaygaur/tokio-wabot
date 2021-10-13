@@ -9,15 +9,15 @@ let handler = async (m, { conn, text }) => {
   }
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw `Unknown Mimetype`
-  if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`
+  if (!mime) throw `caption/reply to a photo`
+  if (!/image\/(jpe?g|png)/.test(mime)) throw `meme ${mime} not supported`
   let img = await q.download()
   let link = await uploadImage(img).catch(e => uploadFile(img))
   conn.sendFile(m.chat, global.API('https://api.memegen.link', `/images/custom/${encodeURIComponent(t1)}/${encodeURIComponent(t2)}.png`, {
     background: link
-  }), 'meme.png', `Nih :|`, m)
+  }), 'meme.png', `Here :|`, m)
 }
-handler.help = ['memeg'].map(v => v + '<apa|apa>')
+handler.help = ['memeg'].map(v => v + '<text|text>')
 handler.tags = ['tools']
 handler.command = /^(memeg)$/i
 
