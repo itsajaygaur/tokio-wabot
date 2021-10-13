@@ -1,5 +1,5 @@
 let handler = async (m, { conn, usedPrefix }) => {
-  await conn.sendButton(m.chat, `“${pickRandom(global.quote)}”`, author, 'quote', `${usedPrefix}quote`, m)
+  await conn.sendButton(m.chat, `“${pickRandom(global.bucin)}”`, author, 'quote', `${usedPrefix}quote`, m)
 }
 handler.help = ['quote']
 handler.tags = ['quotes']
@@ -20,6 +20,7 @@ module.exports = handler
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
+
 
 // https://jalantikus.com/tips/kata-kata-bucin/
 global.bucin = [
