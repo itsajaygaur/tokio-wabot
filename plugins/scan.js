@@ -18,7 +18,7 @@ let handler = async (m, { conn, args }) => {
 *Name:* ${conn.getName(user.jid)}
 *Number:* ${splitM(user.jid)}
 *Mention:* ${toM(user.jid)}
-*Wame:* wa.me/${splitM(user.jid)}
+*Api:* wa.me/${splitM(user.jid)}
 *Jid:* ${user.jid}
 *Whatsapp Bussines:* ${user.isBusiness ? 'Yes' : 'No'}
 *In Database:* ${isInDatabase ? 'Yes' : 'No'}
