@@ -12,7 +12,7 @@ let tags = {
   'premium': 'Premium',
   'internet': 'Internet',
   'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
+  'nulis': 'Logo & Writing',
   'downloader': 'Downloader',
   'tools': 'Tools',
   'audio': 'Audio',
