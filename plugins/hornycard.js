@@ -5,7 +5,7 @@ let handler = async (m, { conn }) => {
   }), 'hornycard.png', 'horny:>', m)
 }
 
-handler.help = ['hornycard', 'hornylicense']
+handler.help = ['hornycard/hornylicense']
 handler.tags = ['maker']
 
 handler.command = /^(horny(card|license))$/i
