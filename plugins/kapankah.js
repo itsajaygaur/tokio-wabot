@@ -1,17 +1,17 @@
 let handler = async (m, { conn, text }) => {
   conn.reply(m.chat, `
-*Question:* ${m.text}
-*Answer:* ${Math.floor(Math.random() * 10)} ${pickRandom(['second', 'minute', 'o\'clock', 'day', 'week', 'month', 'year', 'decade', 'century'])} again ...
+*Pertanyaan:* ${m.text}
+*Jawaban:* ${Math.floor(Math.random() * 10)} ${pickRandom(['detik', 'menit', 'jam', 'hari', 'minggu', 'bulan', 'tahun', 'dekade', 'abad'])} lagi ...
 `.trim(), m, m.mentionedJid ? {
   contextInfo: {
     mentionedJid: m.mentionedJid
   }
 } : {})
 }
-handler.help = ['', 'y'].map(v => 'when' + v + ' <text>?')
-handler.tags = ['shell']
+handler.help = ['', 'kah'].map(v => 'kapan' + v + ' <text>?')
+handler.tags = ['Only for Indonesians']
 handler.customPrefix = /(\?$)/
-handler.command = /^when(y)?$/i
+handler.command = /^kapan(kah)?$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -28,4 +28,3 @@ module.exports = handler
 function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
 }
-
