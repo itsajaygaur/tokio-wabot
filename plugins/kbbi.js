@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
-    if (!text) throw `Uhm.. Teksnya mana?`
+    if (!text) throw `Uhm.. where's the text?`
     let res = await fetch(global.API('xteam', '/kbbi', { kata: text }, 'APIKEY'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
