@@ -38,7 +38,7 @@ https://neoxr-api.herokuapp.com/docs`
     }
 }
 handler.help = ['katabijak'].map(v => v + ' <opsi>')
-handler.tags = ['internet']
+handler.tags = ['Only for Indonesia']
 handler.command = /^(katabijak|jagokata)$/i
 
 module.exports = handler
