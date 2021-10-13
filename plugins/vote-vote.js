@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
-    if (!(id in conn.vote)) throw `_*no voting in this group!*_\n\n*${usedPrefix}start voting* - to start voting`
+    if (!(id in conn.vote)) throw `_*no voting in this group!*_\n\n*${usedPrefix}start* - to start voting`
     let isVote = conn.vote[id][1].concat(conn.vote[id][2])
     const wasVote = isVote.includes(m.sender)
     if (wasVote) throw 'You\'ve voted!'
