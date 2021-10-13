@@ -15,8 +15,8 @@ ${json.url}\n
 *Cara:* ${json.cara}
 `.trim(), m)
 }
-handler.help = ['resep <makanan>', 'masak <makanan>']
-handler.tags = ['internet']
+handler.help = ['resep/masak <makanan>']
+handler.tags = ['Only for Indonesia']
 handler.command = /^(resep|masak)$/i
 
 module.exports = handler
