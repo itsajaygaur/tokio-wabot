@@ -30,12 +30,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 conn.sendFile(m.chat, buff, ran, null, m, /vn/.test(args[0]), { quoted: m, mimetype: 'audio/mp4' })
                 await fs.unlinkSync(filename)
             })
-        } else throw `Balas vn/audio yang ingin diubah dengan caption *${usedPrefix + command}*`
+        } else throw `Reply to vn/audio you want to change with caption *${usedPrefix + command}*`
     } catch (e) {
         throw e
     }
 }
-handler.help = ['bass', 'blown', 'deep', 'earrape', 'fast', 'fat', 'nightcore', 'reverse', 'robot', 'slow', 'smooth', 'tupai'].map(v => v + ' [vn]')
+handler.help = ['bass', 'blown', 'deep', 'earrape', 'fast', 'fat', 'nightcore', 'reverse', 'robot', 'slow', 'smooth', 'squirrel'].map(v => v + ' [vn]')
 handler.tags = ['audio']
 handler.command = /^(bass|blown|deep|earrape|fas?t|nightcore|reverse|robot|slow|smooth|tupai|squirrel|chipmunk)$/i
 
