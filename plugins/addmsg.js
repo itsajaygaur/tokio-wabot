@@ -2,7 +2,7 @@ let { WAMessageProto } = require('@adiwajshing/baileys')
 let handler = async (m, { command, usedPrefix, text }) => {
     let M = WAMessageProto.WebMessageInfo
     let which = command.replace(/\+|add/i, '')
-    if (!m.quoted) throw 'Reply Pesan!'
+    if (!m.quoted) throw 'Reply Message!'
     if (!text) throw `Use *${usedPrefix}list${which}* to see the list`
     let msgs = global.db.data.msgs
     if (text in msgs) throw `'${text}' registered in the message list`
