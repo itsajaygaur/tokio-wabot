@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text }) => {
-    if (!text) throw 'Cari apa?'
+    if (!text) throw 'What are you looking for?'
     let res = await fetch(global.API('xteam', '/search/grupwa', {
         q: text
     }, 'APIKEY'))
@@ -10,9 +10,9 @@ let handler = async (m, { conn, text }) => {
     let teks = json.result.map(res => res.subject + '\n' + res.link).join('\n\n')
     m.reply(teks)
 }
-handler.help = ['carigrup <pencarian>']
+handler.help = ['searchgroup <search>']
 handler.tags = ['tools']
 
-handler.command = /^carigrup/i
+handler.command = /^searchgroup/i
 
 module.exports = handler
