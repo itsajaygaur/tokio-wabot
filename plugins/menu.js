@@ -27,7 +27,7 @@ let tags = {
   'host': 'Host',
   'advanced': 'Advanced',
   'info': 'Info',
-  'Only for Indonesians': 'Only for Indonesians',
+  'Only for Indonesians': 'Only For Indonesians',
 }
 const defaultMenu = {
   before: `
