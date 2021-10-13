@@ -10,7 +10,6 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['', 'kah'].map(v => 'kapan' + v + ' <text>?')
 handler.tags = ['Only for Indonesians']
-handler.customPrefix = /(\?$)/
 handler.command = /^kapan(kah)?$/i
 handler.owner = false
 handler.mods = false
