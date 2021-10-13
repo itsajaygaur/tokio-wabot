@@ -15,7 +15,7 @@ ${json.lyrics}\n\n
 ${json.links.genius}
 `, m)
 }
-handler.help = ['lyric'].map(v => v + ' <Apa>')
+handler.help = ['lyric'].map(v => v + ' <song title>')
 handler.tags = ['internet']
 handler.command = /^(lirik|lyrics|lyric)$/i
 
