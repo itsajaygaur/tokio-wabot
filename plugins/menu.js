@@ -6,54 +6,49 @@ let tags = {
   'game': 'Game',
   'xp': 'Exp & Limit',
   'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
   'quotes': 'Quotes',
   'admin': 'Admin',
   'group': 'Group',
   'premium': 'Premium',
   'internet': 'Internet',
   'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
+  'nulis': 'Logo & Writing',
   'downloader': 'Downloader',
   'tools': 'Tools',
+  'exp': 'Register',
   'fun': 'Fun',
   'database': 'Database',
   'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
+  'absen': 'Absent',
+  'jadibot': 'Get Bot',
   'owner': 'Owner',
   'host': 'Host',
   'advanced': 'Advanced',
   'info': 'Info',
+  'Only for Indonesians': 'Only For Indonesians'
   '': 'No Category',
 }
 const defaultMenu = {
   before: `
-╭─「 %me 」
-│ Hai, %name!
-│
-│ Tersisa *%limit Limit*
-│ Role *%role*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
-│ %totalexp XP in Total
-│ 
-│ Tanggal: *%week %weton, %date*
-│ Tanggal Islam: *%dateIslamic*
-│ Waktu: *%time*
-│
-│ Uptime: *%uptime (%muptime)*
-│ Database: %rtotalreg of %totalreg
-│ Github:
-│ %github
-╰────
+
+👋🏻(❤️ω❤️) Ohayō %name, how can i help you?
+
+🔖Left: *%limit Limit*
+🔰Role: *%role*
+📈Level: *%level* 
+🎯Total XP: *%totalexp*
+
+💹Prefix: *%p*
+⏱️Uptime: *%uptime (%muptime)*
+📊Database: *%rtotalreg of %totalreg*
+
+All commands are listed below 👇🏻
+
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
-  after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
+  header: ' *「 %category 」*',
+  body: ' ❏ %cmd %islimit %isPremium',
+  footer: ' ',
+  after: `*Hope you're enjoying the bot, have a great day* 🌻
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -154,11 +149,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     conn.reply(m.chat, text.trim(), m)
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['help/menu/?']
 handler.tags = ['main']
 handler.command = /^(menu|help|\?)$/i
 handler.owner = false
