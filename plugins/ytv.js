@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
-*${isLimit ? 'Use ': ''}Link:* ${dl_link}
+*${isLimit ? 'Used ': ''}
 `.trim(), m)
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
@@ -23,7 +23,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   asDocument: chat.useDocument
 })
 }
-handler.help = ['mp4','v',''].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
+handler.help = ['mp4/ytv'].map(v => 'yt' + v + ` <url>`)
 handler.tags = ['downloader']
 handler.command = /^yt(v|mp4)?$/i
 handler.owner = false
