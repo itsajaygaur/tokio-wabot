@@ -16,7 +16,7 @@ ${json.url}\n
 `.trim(), m)
 }
 handler.help = ['resep/masak <makanan>']
-handler.tags = ['Only for Indonesia']
+handler.tags = ['Only for Indonesians']
 handler.command = /^(resep|masak)$/i
 
 module.exports = handler
