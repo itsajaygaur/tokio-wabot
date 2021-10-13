@@ -15,6 +15,9 @@ let tags = {
   'nulis': 'MagerNulis & Logo',
   'downloader': 'Downloader',
   'tools': 'Tools',
+  'audio': 'Audio',
+  'maker': 'Maker',
+  'exp': 'Register',
   'fun': 'Fun',
   'database': 'Database',
   'vote': 'Voting',
@@ -25,7 +28,6 @@ let tags = {
   'advanced': 'Advanced',
   'info': 'Info',
   'Only for Indonesians': 'only for indonesia',
-  '': 'No Category',
 }
 const defaultMenu = {
   before: `
