@@ -9,10 +9,10 @@ let handler  = async (m, { command, conn, text }) => {
     kelas: ' '
   }, 'APIKEY'), 'nulis.jpg', 'Nahh it\'s done...', m)
 }
-handler.help = new Array(6).fill('penwrite').map((v, i) => v + (i + 1) + ' <teks>')
+handler.help = new Array(6).fill('lazywrite').map((v, i) => v + (i + 1) + ' <teks>')
 handler.tags = ['nulis']
 
-handler.command = /^penwrite[1-6]?$/i
+handler.command = /^lazywrite[1-6]?$/i
 
 handler.limit = true
 
