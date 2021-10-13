@@ -14,7 +14,8 @@ async function handler(m) {
     }))
     await fs.unlink(filename)
 }
-handler.command = handler.help = ['tobraille']
+handler.command = ['tobraille']
+handler.help = /^tobraille$/i
 handler.tags = ['tools']
 
 module.exports = handler
