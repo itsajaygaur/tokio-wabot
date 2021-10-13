@@ -6,7 +6,6 @@ let tags = {
   'game': 'Game',
   'xp': 'Exp & Limit',
   'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
   'quotes': 'Quotes',
   'admin': 'Admin',
   'group': 'Group',
@@ -25,13 +24,13 @@ let tags = {
   'host': 'Host',
   'advanced': 'Advanced',
   'info': 'Info',
+  'Only for Indonesians': 'only for indonesia',
   '': 'No Category',
 }
 const defaultMenu = {
   before: `
 
-👋🏻(❤️ω❤️) Ohayō %name 
-I am %me, how can i help you? 🥀
+👋🏻(❤️ω❤️) Ohayō %name, how can i help you?
 
 🔖Left: *%limit Limit*
 🔰Role: *%role*
