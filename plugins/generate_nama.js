@@ -31,9 +31,9 @@ function handler(m, { text }) {
         }
     }))
 }
-handler.help = ['Namaninja <teks>']
+handler.help = ['Nameninja <teks>']
 handler.tags = ['fun']
-handler.command =  /^(namaninja|namae)$/i
+handler.command =  /^(nameninja|namae)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
