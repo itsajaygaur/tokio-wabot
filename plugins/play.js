@@ -28,7 +28,7 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *Source:* ${vid.url}
-*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+*${isLimit ? 'Used ': ''}*
 *Server y2mate:* ${usedServer}
 `.trim(), m)
 let _thumb = {}
