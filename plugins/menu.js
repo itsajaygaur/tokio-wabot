@@ -21,7 +21,7 @@ let tags = {
   'fun': 'Fun',
   'database': 'Database',
   'vote': 'Voting',
-  'absen': 'Absen',
+  'absen': 'Absent',
   'jadibot': 'Jadi Bot',
   'owner': 'Owner',
   'host': 'Host',
