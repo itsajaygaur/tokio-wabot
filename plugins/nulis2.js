@@ -67,7 +67,7 @@ let handler  = async (m, { conn, args }) => {
     .stdout.on('data', chunk => bufs.push(chunk))
 }
 handler.help = ['w'].map(v => v + 'rite2 <teks>')
-handler.tags = ['tools']
+handler.tags = ['nulis']
 handler.command = /^write2$/i
 handler.owner = false
 handler.mods = false
