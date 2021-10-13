@@ -1,5 +1,5 @@
 module.exports = Object.assign(async function handler(m, { command }) {
-    if (!m.quoted) throw 'Reply Pesan!'
+    if (!m.quoted) throw 'Reply Message!'
     if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
     let sticker = global.db.data.sticker
     let hash = m.quoted.fileSha256.toString('hex')
