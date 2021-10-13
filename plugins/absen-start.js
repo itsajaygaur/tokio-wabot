@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, text, isAdmin, isOwner }) => {
     conn.absen = conn.absen ? conn.absen : {}
     let id = m.chat
     if (id in conn.absen) {
-        await conn.send2Button(m.chat, `There are still absences in this chat!`, '© stikerin', 'delete', `${usedPrefix}removeabsence`, 'Check', `${usedPrefix}checkabsent`, m)
+        await conn.send2Button(m.chat, `There are still absences in this chat!`, '© stikerin', 'delete', `${usedPrefix}removeabsent`, 'Check', `${usedPrefix}checkabsent`, m)
         throw false
     }
     conn.absen[id] = [
@@ -19,6 +19,6 @@ let handler = async (m, { conn, usedPrefix, text, isAdmin, isOwner }) => {
 }
 handler.help = ['startabsent [teks]']
 handler.tags = ['absen']
-handler.command = /^(start|mulai)absen$/i
+handler.command = /^(start|mulai)absent$/i
 
 module.exports = handler
