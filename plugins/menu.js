@@ -15,8 +15,6 @@ let tags = {
   'nulis': 'Logo & Writing',
   'downloader': 'Downloader',
   'tools': 'Tools',
-  'audio': 'Audio',
-  'maker': 'Maker',
   'exp': 'Register',
   'fun': 'Fun',
   'database': 'Database',
