@@ -8,7 +8,7 @@ let handler = async (m, { text }) => {
   else throw json
 }
 handler.help = ['truth']
-handler.tags = ['fun']
+handler.tags = ['Only for Indonesians']
 handler.command = /^(truth|kebenaran|kejujuran)$/i
 //ftwr
 module.exports = handler
