@@ -14,7 +14,7 @@ _Made on *${formatDate(repo.created_at)}*_
 _Last update on *${formatDate(repo.updated_at)}*_
 👁  ${repo.watchers}   🍴  ${repo.forks}   ⭐  ${repo.stargazers_count}
 ${repo.open_issues} Issue${repo.description ? `
-*Deskripsi:*\n${repo.description}` : ''}
+*Description:*\n${repo.description}` : ''}
 *Clone:* \`\`\`$ git clone ${repo.clone_url}\`\`\`
 `.trim()
     }).join('\n\n')
