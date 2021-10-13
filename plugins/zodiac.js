@@ -1,5 +1,5 @@
 let handler = (m, { usedPrefix, command, text }) => {
-    if (!text) throw `contoh:\n${usedPrefix + command} 2002 02 25`
+    if (!text) throw `example:\n${usedPrefix + command} 2002 02 25`
 
     const date = new Date(text)
     if (date == 'Invalid Date') throw date
