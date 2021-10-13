@@ -37,9 +37,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.on('CB:action,,call', conn.onCall)
     conn.regenerateQRIntervalMs = null
     conn.connect().then(async ({ user }) => {
-      parent.reply(m.chat, 'Successfully connected with WhatsApp - mu.\n*NOTE: It is just a ride*\n' + JSON.stringify(user, null, 2), m)
+      parent.reply(m.chat, 'Successfully connected with WhatsApp - mu.\n*NOTE: It\'s just a ride*\n' + JSON.stringify(user, null, 2), m)
       if (auth) return
-      await parent.sendMessage(user.jid, `You can login without qr with the message below. to get the full code, please send *${usedPrefix}getcode* to get an accurate code`, MessageType.extendedText)
+      await parent.sendMessage(user.jid, `You can login without qr with the message below. To get the full code, please send *${usedPrefix}getcode* to get an accurate code`, MessageType.extendedText)
       parent.sendMessage(user.jid, `${usedPrefix + command} ${Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString('base64')}`, MessageType.extendedText)
     })
     setTimeout(() => {
@@ -55,7 +55,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         try {
           if (conn.state != 'close') return
           if (conn.user && conn.user.jid)
-            parent.sendMessage(conn.user.jid, `Koneksi terputus...`, MessageType.extendedText)
+            parent.sendMessage(conn.user.jid, `Connection lost...`, MessageType.extendedText)
           let i = global.conns.indexOf(conn)
           if (i < 0) return
           delete global.conns[i]
@@ -66,10 +66,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     global.conns.push(conn)
   } else throw 'Cannot make a bot inside a bot!\n\nhttps://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=.jadibot'
 }
-handler.help = ['jadibot']
+handler.help = ['getbot']
 handler.tags = ['jadibot']
 
-handler.command = /^jadibot$/i
+handler.command = /^getbot$/i
 
 handler.limit = true
 
