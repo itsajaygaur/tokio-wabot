@@ -19,7 +19,6 @@ let handler = async (m, { conn, args }) => {
 🎵 ${json.info[0].musicMeta.musicName} by ${json.info[0].musicMeta.musicAuthor}
 - *By:* ${json.info[0].authorMeta.nickName} (${json.info[0].authorMeta.name})
 - *Desc:*
-${txt}
   `.trim(), m)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
