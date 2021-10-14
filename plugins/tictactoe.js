@@ -2,11 +2,11 @@ const TicTacToe = require("../lib/tictactoe")
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
-    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
+    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game'
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
     if (room) {
-        m.reply('Partner ditemukan!')
+        m.reply('Partners found!')
         room.o = m.chat
         room.game.playerO = m.sender
         room.state = 'PLAYING'
@@ -31,8 +31,8 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-Menunggu @${room.game.currentTurn.split('@')[0]}
-Ketik *nyerah* untuk nyerah
+Waiting @${room.game.currentTurn.split('@')[0]}
+Type *giveup* to give up
 `.trim()
         if (room.x !== room.o) m.reply(str, room.x, {
             contextInfo: {
@@ -53,7 +53,7 @@ Ketik *nyerah* untuk nyerah
             state: 'WAITING'
         }
         if (text) room.name = text
-        m.reply('Menunggu partner' + (text ? `mengetik command dibawah ini
+        m.reply('Waiting for partner' + (text ? `type the command below
 ${usedPrefix}${command} ${text}` : ''))
         conn.game[room.id] = room
     }
