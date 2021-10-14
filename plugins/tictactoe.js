@@ -2,11 +2,11 @@ const TicTacToe = require("../lib/tictactoe")
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
-    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game'
+    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
     if (room) {
-        m.reply('Partners found!')
+        m.reply('Partner ditemukan!')
         room.o = m.chat
         room.game.playerO = m.sender
         room.state = 'PLAYING'
@@ -31,17 +31,17 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-Waiting @${room.game.currentTurn.split('@')[0]}
-type *giveup* to give up
+Menunggu @${room.game.currentTurn.split('@')[0]}
+Ketik *nyerah* untuk nyerah
 `.trim()
-        if (room.x !== room.o) await this.sendButton(room.x, str, author, 'Giveup', 'giveup', m, {
+        if (room.x !== room.o) m.reply(str, room.x, {
             contextInfo: {
-                mentionedJid: this.parseMention(str)
+                mentionedJid: conn.parseMention(str)
             }
         })
-        await this.sendButton(room.o, str, author, 'Giveup', 'giveup', m, {
+        m.reply(str, room.o, {
             contextInfo: {
-                mentionedJid: this.parseMention(str)
+                mentionedJid: conn.parseMention(str)
             }
         })
     } else {
@@ -53,13 +53,13 @@ type *giveup* to give up
             state: 'WAITING'
         }
         if (text) room.name = text
-        m.reply('Waiting for partner' + (text ? ` type the command below
+        m.reply('Menunggu partner' + (text ? `mengetik command dibawah ini
 ${usedPrefix}${command} ${text}` : ''))
         conn.game[room.id] = room
     }
 }
 
-handler.help = ['tictactoe/ttt'].map(v => v + ' [custom room name]')
+handler.help = ['tictactoe', 'ttt'].map(v => v + ' [custom room name]')
 handler.tags = ['game']
 handler.command = /^(tictactoe|t{3})$/
 
