@@ -117,7 +117,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       ...Object.keys(tags).map(tag => {
         return header.replace(/%category/g, tags[tag]) + '\n' + [
           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
-            return menu.help.map(help => {
+            return (help => {
               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
                 .replace(/%islimit/g, menu.limit ? '(Limit)' : '')
                 .replace(/%isPremium/g, menu.premium ? '(Premium)' : '')
