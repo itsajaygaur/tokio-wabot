@@ -53,7 +53,7 @@ Type *giveup* to give up
             state: 'WAITING'
         }
         if (text) room.name = text
-        m.reply('Waiting for partner' + (text ? `type the command below
+        m.reply('Waiting for partner' + (text ? ` type the command below
 ${usedPrefix}${command} ${text}` : ''))
         conn.game[room.id] = room
     }
