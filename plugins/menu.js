@@ -20,7 +20,7 @@ let tags = {
   'database': 'Database',
   'vote': 'Voting',
   'absen': 'Absent',
-  'jadibot': 'Get Bot',
+  'jadibot': 'Jadibot',
   'owner': 'Owner',
   'host': 'Host',
   'advanced': 'Advanced',
