@@ -17,6 +17,8 @@ let tags = {
   'tools': 'Tools',
   'exp': 'Register',
   'fun': 'Fun',
+  'audio': 'Audio',
+  'maker': 'Maker',
   'database': 'Database',
   'vote': 'Voting',
   'absen': 'Absent',
