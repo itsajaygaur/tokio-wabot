@@ -19,17 +19,18 @@ let tags = {
   'fun': 'Fun',
   'database': 'Database',
   'vote': 'Voting',
-  'absen': 'Absen',
+  'absen': 'Absent',
   'jadibot': 'Get Bot',
   'owner': 'Owner',
   'host': 'Host',
   'advanced': 'Advanced',
   'info': 'Info',
-  'Only for Indonesians': 'Only For Indonesians',
+  'Only for Indonesians': 'Only For Indonesians'
   '': 'No Category',
 }
 const defaultMenu = {
   before: `
+
 👋🏻(❤️ω❤️) Ohayō %name, how can i help you?
 
 🔖Left: *%limit Limit*
@@ -148,11 +149,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     conn.reply(m.chat, text.trim(), m)
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['help/menu/?']
 handler.tags = ['main']
 handler.command = /^(menu|help|\?)$/i
 handler.owner = false
