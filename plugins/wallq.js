@@ -4,7 +4,7 @@
 const fetch = require('node-fetch')
 
 let handler = async (m, { conn, text }) => {
-  if (!text) throw 'Nyari apa?'
+  if (!text) throw 'Looking for what?'
   let res = await fetch(global.API('https://wall.alphacoders.com/api2.0','/get.php', {
     auth: '3e7756c85df54b78f934a284c11abe4e',
     method: 'search',
@@ -13,7 +13,7 @@ let handler = async (m, { conn, text }) => {
   if (!res.ok) throw await res.text()
   let json = await res.json()
   let img = json.wallpapers[Math.floor(Math.random() * json.wallpapers.length)]
-  await conn.sendFile(m.chat, img.url_image, 'wallpaper', 'Nih wallpaper!', m)
+  await conn.sendFile(m.chat, img.url_image, 'wallpaper', 'Here wallpaper!', m)
 }
 handler.help = ['wallpaperq <query>']
 handler.tags = ['internet']

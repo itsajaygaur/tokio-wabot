@@ -23,13 +23,13 @@ const result = {
 hasil.push(result)
 })
 
-let caption = hasil.map(v => `▢ *Judul* : ${v.film_title}\n▢ *Link* : ${v.film_link}`).join('\n────────────────\n')
-  m.reply(`*LAYAR KACA*\n\n${caption}`)
+let caption = hasil.map(v => `▢ *Title* : ${v.film_title}\n▢ *Link* : ${v.film_link}`).join('\n────────────────\n')
+  m.reply(`*TELEVISION*\n\n${caption}`)
 }
 
-handler.help = ['Layarkaca'].map(v => v + ' <query>')
+handler.help = ['television/tv'].map(v => v + ' <query>')
 handler.tags = ['internet']
-handler.command = /^(layarkaca)$/i
+handler.command = /^(television|tv)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

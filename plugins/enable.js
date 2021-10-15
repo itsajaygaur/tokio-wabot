@@ -157,18 +157,18 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       if (!/[01]/.test(command)) throw `
 List option: welcome | delete | public | antilink | autolevelup | detect | document | whitelistmycontacts | restrict | nyimak | autoread | pconly | gconly | swonly | viewonce
 
-Contoh:
+Example:
 ${usedPrefix}enable welcome
 ${usedPrefix}disable welcome
 `.trim()
       throw false
   }
   m.reply(`
-*${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'}
+*${type}* has successfully *${isEnable ? 'turned on' : 'turned off'}* ${isAll ? 'for this bot' : isUser ? '' : 'for this chat'}
 `.trim())
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['group', 'owner']
+handler.tags = ['group']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
 module.exports = handler

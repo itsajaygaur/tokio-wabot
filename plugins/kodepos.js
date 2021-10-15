@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     m.reply(mes)
 }
 handler.help = ['kodepos <kota>']
-handler.tags = ['tools']
+handler.tags = ['Only for Indonesians']
 handler.command = /^kodepos$/i
 
 handler.limit = true

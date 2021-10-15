@@ -1,50 +1,50 @@
 let handler = async (m, { text, usedPrefix }) => {
     let poin = 300
-    let salah = `Pilihan yang tersedia Gunting, Kertas, Batu\n\n*Contoh* : ${usedPrefix}suit gunting\n`
-    if (!text) throw salah
+    let wrong = `Available options scissor, paper, rock\n\n*Example* : ${usedPrefix}suit scissor\n`
+    if (!text) throw wrong
     var suit = Math.random()
 
     if (suit < 0.34) {
-        suit = 'batu'
+        suit = 'rock'
     } else if (suit > 0.34 && suit < 0.67) {
-        suit = 'gunting'
+        suit = 'scissor'
     } else {
-        suit = 'kertas'
+        suit = 'paper'
     }
 
     //menentukan rules
     if (text == suit) {
       global.db.data.users[m.sender].exp += 100
-        m.reply(`*Kita Seri*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (±)100 XP`)
-    } else if (text == 'batu') {
-        if (suit == 'gunting') {
+        m.reply(`*we draw*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (±)100 XP`)
+    } else if (text == 'rock') {
+        if (suit == 'scissor') {
             global.db.data.users[m.sender].exp += 300
-            m.reply(`*Kamu Menang*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
+            m.reply(`*You win*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
         } else {
           global.db.data.users[m.sender].exp -= 300
-            m.reply(`*Kamu Kalah*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
+            m.reply(`*You lose*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
         }
-    } else if (text == 'gunting') {
-        if (suit == 'kertas') {
+    } else if (text == 'scissor') {
+        if (suit == 'paper') {
             global.db.data.users[m.sender].exp += 300
-            m.reply(`*Kamu Menang*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
+            m.reply(`*You win*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
         } else {
           global.db.data.users[m.sender].exp -= 300
-            m.reply(`*Kamu Kalah*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
+            m.reply(`*You lose*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
         }
-    } else if (text == 'kertas') {
-        if (suit == 'batu') {
+    } else if (text == 'paper') {
+        if (suit == 'rock') {
             global.db.data.users[m.sender].exp += 300
-            m.reply(`*Kamu Menang*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
+            m.reply(`*You win*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (+)${poin} XP`)
         } else {
           global.db.data.users[m.sender].exp -= 300
-            m.reply(`*Kamu Kalah*\n\nkamu : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
+            m.reply(`*You lose*\n\nyou : ${text}\nBot : ${suit}\n\nPoin (-)${poin} XP`)
         }
     } else {
-        throw salah
+        throw wrong
     }
 }
-handler.help = ['Suit gunting/batu/kertas']
+handler.help = ['suit scissor/rock/paper']
 handler.tags = ['game']
 handler.command = /^suit$/i
 handler.owner = false

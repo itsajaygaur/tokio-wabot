@@ -30,7 +30,7 @@ Bonus: ${poin} XP
     ]
 }
 handler.help = ['asahotak']
-handler.tags = ['game']
+handler.tags = ['Only for Indonesians']
 handler.command = /^asahotak/i
 
 module.exports = handler

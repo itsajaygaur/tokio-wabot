@@ -9,8 +9,7 @@ let handler = async (m, { conn, text }) => {
 } : {})
 }
 handler.help = ['', 'kah'].map(v => 'kapan' + v + ' <text>?')
-handler.tags = ['kerang']
-handler.customPrefix = /(\?$)/
+handler.tags = ['Only for Indonesians']
 handler.command = /^kapan(kah)?$/i
 handler.owner = false
 handler.mods = false
@@ -28,4 +27,3 @@ module.exports = handler
 function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
 }
-

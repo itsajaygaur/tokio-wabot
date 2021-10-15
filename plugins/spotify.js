@@ -1,7 +1,7 @@
 // Made By github.com/TOXIC-DEVIL
 let fetch = require('node-fetch')
 let handler = async(m, { conn, text }) => {
-  if (!text) throw `Masukkan judul musik!`
+  if (!text) throw `Enter the music title!`
   let res = await fetch(global.API('zeks', '/api/spotify', { q: text }, 'apikey'))
   if (!res.ok) throw await res.text()
   let json = await res.json()
@@ -9,9 +9,9 @@ let handler = async(m, { conn, text }) => {
   let { title, artists, album, thumb, url, preview_mp3 } = json.data[0]
 let spotifyinfo = `✨️ *Title:* ${title}
 🗣️ *Artists:* ${artists}
-🎆️ *Album:* ${album}
+🎴 *Album:* ${album}
 🌐️ *URL*: ${url}
-💚️ *Direct URL:* ${preview_mp3}\n\n@TOXIC-DEVIL`
+🔗 *Direct URL:* ${preview_mp3}`
 
   await conn.sendFile(m.chat, thumb, '', spotifyinfo, m)
   await conn.sendFile(m.chat, preview_mp3, 'spotify.mp3', spotifyinfo, m)

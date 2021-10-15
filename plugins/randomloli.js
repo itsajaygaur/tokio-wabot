@@ -1,4 +1,4 @@
-var {WAMessageProto} = require('@adiwajshing/baileys')
+const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
 yh = global.loli
