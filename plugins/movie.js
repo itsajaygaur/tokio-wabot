@@ -26,7 +26,7 @@ let handler = async (m, { conn }) => {
 	msg += 'imdbRating : ' + json.imdbRating + '\n\n';
 	msg += 'imdbVotes  : ' + json.imdbVotes + '```';
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-})
+;}
 handler.help = ['movie']
 handler.tags = ['internet']
 handler.command = /^(movie)$/i
