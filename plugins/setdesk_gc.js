@@ -3,7 +3,7 @@ let handler = async (m, { conn, args }) => {
   m.reply('Successfully changed the group description')
 }
 
-handler.help = ['Setdesk <text>']
+handler.help = ['setdesk <text>']
 handler.tags = ['group']
 handler.command = /^setdesk$/i
 handler.owner = false
