@@ -1,7 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const fetch = require('node-fetch')
 
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'give me a name !'
 	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
 	const response = await got(url);
