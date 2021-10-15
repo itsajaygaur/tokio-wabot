@@ -18,7 +18,7 @@ TOBAT BODO
     })
 }
 handler.help = ['hentai']
-handler.tags = ['anime']
+handler.tags = ['internet']
 handler.command = /^(hentai)$/i
 handler.owner = false
 handler.mods = false
