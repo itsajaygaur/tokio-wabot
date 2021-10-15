@@ -1,7 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys');
 const got = require('got');
 //LyFE
-let handler = async (message, match) => {
+let handler = async (m, { message, match }) => {
 	if (match[1] === '') return await message.client.reply(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
 	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
 	const response = await got(url);
