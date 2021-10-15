@@ -3,30 +3,35 @@ const fetch = require('node-fetch')
 
 let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'give me a name !'
-	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
-	const response = await got(url);
+	let res = await fetch('http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full')
+	let json = await res.json ()
 	const json = JSON.parse(response.body);
-	if (json.Response != 'True') return await message.client.sendMessage(message.jid, '*Not found.*', MessageType.text, { quoted: message.data });
-	let msg = '```';
-	msg += 'Title      : ' + json.Title + '\n\n';
-	msg += 'Year       : ' + json.Year + '\n\n';
-	msg += 'Rated      : ' + json.Rated + '\n\n';
-	msg += 'Released   : ' + json.Released + '\n\n';
-	msg += 'Runtime    : ' + json.Runtime + '\n\n';
-	msg += 'Genre      : ' + json.Genre + '\n\n';
-	msg += 'Director   : ' + json.Director + '\n\n';
-	msg += 'Writer     : ' + json.Writer + '\n\n';
-	msg += 'Actors     : ' + json.Actors + '\n\n';
-	msg += 'Plot       : ' + json.Plot + '\n\n';
-	msg += 'Language   : ' + json.Language + '\n\n';
-	msg += 'Country    : ' + json.Country + '\n\n';
-	msg += 'Awards     : ' + json.Awards + '\n\n';
-	msg += 'BoxOffice  : ' + json.BoxOffice + '\n\n';
-	msg += 'Production : ' + json.Production + '\n\n';
-	msg += 'imdbRating : ' + json.imdbRating + '\n\n';
-	msg += 'imdbVotes  : ' + json.imdbVotes + '```';
-	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-;}
+	 let text = `
+	 'Title      : ' + json.Title + '\n\n';
+	 'Year       : ' + json.Year + '\n\n';
+	 'Rated      : ' + json.Rated + '\n\n';
+	 'Released   : ' + json.Released + '\n\n';
+	 'Runtime    : ' + json.Runtime + '\n\n';
+	 'Genre      : ' + json.Genre + '\n\n';
+	 'Director   : ' + json.Director + '\n\n';
+	 'Writer     : ' + json.Writer + '\n\n';
+	 'Actors     : ' + json.Actors + '\n\n';
+	 'Plot       : ' + json.Plot + '\n\n';
+	 'Language   : ' + json.Language + '\n\n';
+	 'Country    : ' + json.Country + '\n\n';
+	 'Awards     : ' + json.Awards + '\n\n';
+	 'BoxOffice  : ' + json.BoxOffice + '\n\n';
+	 'Production : ' + json.Production + '\n\n';
+	 'imdbRating : ' + json.imdbRating + '\n\n';
+	 'imdbVotes  : ' + json.imdbVotes + '```';
+	`.trim()
+        conn.reply(m.chat, text, m)
+        
+    } catch (e) {
+        console.log(e)
+	throw '_here is your movie_'
+	}
+}
 handler.help = ['movie']
 handler.tags = ['internet']
 handler.command = /^(movie)$/i
