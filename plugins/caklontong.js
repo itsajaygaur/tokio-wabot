@@ -28,7 +28,7 @@ Bonus: ${poin} XP
     ]
 }
 handler.help = ['caklontong']
-handler.tags = ['game']
+handler.tags = ['Only for Indonesians']
 handler.command = /^caklontong/i
 
 module.exports = handler

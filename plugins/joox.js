@@ -2,9 +2,9 @@ const { joox } = require('../lib/scrape_joox')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
-    if (!text) throw `*Perintah ini untuk mencari lagu joox berdasarkan pencarian*\n\ncontoh:\n${usedPrefix + command} akad`
+    if (!text) throw `*This command is to search for joox songs by search*\n\nexample:\n${usedPrefix + command} playdate`
 
-    if (isUrl(text)) throw `*Perintah ini untuk mencari lagu joox berdasarkan pencarian bukan link*\n\ncontoh:\n${usedPrefix + command} akad`
+    if (isUrl(text)) throw `*This command is to search for joox songs based on search not links*\n\nexample:\n${usedPrefix + command} playdate`
 
     joox(text).then(res => {
 
@@ -20,13 +20,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
         let pesan = `
 
-*Penyanyi:* ${json.penyanyi}
+*Singer:* ${json.penyanyi}
 
-*Judul:* ${json.lagu}
+*Title:* ${json.lagu}
 
 *Album:* ${json.album}
 
-*Diterbitkan:* ${json.publish}
+*Published:* ${json.publish}
 
 *Link:* ${json.mp3}
 
@@ -40,7 +40,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 }
 
-handler.help = ['joox'].map(v => v + ' <judul>')
+handler.help = ['joox'].map(v => v + ' <title>')
 
 handler.tags = ['downloader']
 

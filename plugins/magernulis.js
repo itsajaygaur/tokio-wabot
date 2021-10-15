@@ -7,12 +7,12 @@ let handler  = async (m, { command, conn, text }) => {
     text,
     nama: conn.getName(m.sender),
     kelas: ' '
-  }, 'APIKEY'), 'nulis.jpg', 'Nahhh sudah jadi...', m)
+  }, 'APIKEY'), 'nulis.jpg', 'Nahh it\'s done...', m)
 }
-handler.help = new Array(6).fill('magernulis').map((v, i) => v + (i + 1) + ' <teks>')
+handler.help = new Array(6).fill('lazywrite').map((v, i) => v + (i + 1) + ' <teks>')
 handler.tags = ['nulis']
 
-handler.command = /^magernulis[1-6]?$/i
+handler.command = /^lazywrite[1-6]?$/i
 
 handler.limit = true
 

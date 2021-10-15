@@ -30,7 +30,7 @@ ${negatif}
 
 }
 handler.help = ['jodoh'].map(v => v + ' <nama>|<nama doi>')
-handler.tags = ['fun']
+handler.tags = ['Only for Indonesians']
 handler.command = /^(jodoh)$/i
 
 handler.limit = true

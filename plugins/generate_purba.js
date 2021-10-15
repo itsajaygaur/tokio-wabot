@@ -10,9 +10,9 @@ function handler(m, { text }) {
         }
     }))
 }
-handler.help = ['Purba <teks>']
+handler.help = ['ancient <teks>']
 handler.tags = ['fun']
-handler.command =  /^(purba)$/i
+handler.command =  /^(ancient)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

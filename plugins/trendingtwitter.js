@@ -7,7 +7,7 @@ let handler = async (m, { text }) => {
   if (json.status) m.reply(trd)
   else throw json
 }
-handler.help = ['trendtwit', 'trendingtwitter']
+handler.help = ['trendtwit/trendingtwitter']
 handler.tags = ['internet']
 handler.command = /^(trend(twit|ingtwitter))$/i
 

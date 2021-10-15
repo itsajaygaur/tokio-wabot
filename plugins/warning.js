@@ -8,18 +8,18 @@ let handler = async (m, { conn, args, groupMetadata}) => {
         if (warn < 2) {
             global.db.data.users[mention].warn += 1
             conn.reply(m.chat, `⚠️ *WARNING +1*`, m)
-            m.reply('Kamu mendapatkan warn dari admin, total warn kamu sekarang *' + (warn + 1) + '* warn, Jika kamu mendapat warn *3 kali*, kamu akan dikeluarkan dari grup', mention)
+            m.reply('You got a warning from admin, your total warning now *' + (warn + 1) + '* warn, If you get a warning *3 time*, you will be removed from the group', mention)
         } else if (warn == 2) {
             global.db.data.users[mention].warn = 0
-            m.reply('Selamat tinggal')
+            m.reply('Goodbye')
                 await time(5000)
              await conn.groupRemove(m.chat, [mention])
-             m.reply(`Kamu dikeluarkan dari group ${groupMetadata.subject} karena telah mendapat 3 kali warn`, mention)
+             m.reply(`You were removed from the group ${groupMetadata.subject} because it has been warned 3 times`, mention)
            
         }
     } else conn.reply(m.chat, 'Tag target', m)
 }
-handler.help = ['Warn @user']
+handler.help = ['warn @user']
 handler.tags = ['group']
 handler.command = /^warn$/i
 handler.owner = false

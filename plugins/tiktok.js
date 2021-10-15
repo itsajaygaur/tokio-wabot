@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
-  if (!args[0]) throw 'Uhm...url nya mana?'
+  if (!args[0]) throw 'Uhm... where\'s the url?'
   let res = await fetch(global.API('xteam', '/dl/tiktok', {
     url: args[0]
   }, 'APIKEY'))
@@ -8,7 +8,7 @@ let handler = async (m, { conn, args }) => {
   let json = await res.json()
   if (!json.status) throw json
   let url = json.server_1 || json.info[0].videoUrl || ''
-  if (!url) throw 'Gagal mengambil url download'
+  if (!url) throw 'Failed to fetch download url'
   let txt = json.info[0].text
   for (let hashtag of json.info[0].hashtags) txt = txt.replace(hashtag, '*$&*')
   await conn.sendFile(m.chat, url, 'tiktok.mp4', `
@@ -19,7 +19,6 @@ let handler = async (m, { conn, args }) => {
 🎵 ${json.info[0].musicMeta.musicName} by ${json.info[0].musicMeta.musicAuthor}
 - *By:* ${json.info[0].authorMeta.nickName} (${json.info[0].authorMeta.name})
 - *Desc:*
-${txt}
   `.trim(), m)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')

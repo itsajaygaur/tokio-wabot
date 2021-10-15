@@ -28,7 +28,7 @@ Bonus: ${poin} XP
   ]
 }
 handler.help = ['tebakgambar']
-handler.tags = ['game']
+handler.tags = ['Only for Indonesians']
 handler.command = /^tebakgambar/i
 
 module.exports = handler

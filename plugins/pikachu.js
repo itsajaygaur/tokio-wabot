@@ -13,7 +13,6 @@ let handler = async(m, { conn }) => {
 }
 handler.help = ['pikachu']
 handler.tags = ['internet']
-handler.customPrefix = /^pik{1,2}a(c{1,2}hu)?$/i
-handler.command = new RegExp
+handler.command = /^pikachu/i
 
 module.exports = handler

@@ -1,12 +1,12 @@
 let handler = async (m, { conn, args, groupMetadata}) => {
       let target = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
        let warn = global.db.data.users[target].warn
-      m.reply(`Kamu memiliki Total Warning : ${warn}`)
+      m.reply(`You have Total Warning : ${warn}`)
 }
 
-handler.help = ['Cekwarn @user']
+handler.help = ['checkwarn @user']
 handler.tags = ['group']
-handler.command = /^cekwarn$/i
+handler.command = /^checkwarn$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

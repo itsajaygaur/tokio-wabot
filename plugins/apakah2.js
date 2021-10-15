@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, text }) => {
   } : {})
 }
 handler.help = ['apakah <pertanyaan>']
-handler.tags = ['kerang']
+handler.tags = ['Only for Indonesians']
 handler.command = /^apakah$/i
 handler.owner = false
 handler.mods = false

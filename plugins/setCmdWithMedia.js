@@ -1,6 +1,6 @@
 module.exports = Object.assign(async function handler(m, { text }) {
     global.db.data.sticker = global.db.data.sticker || {}
-    if (!m.quoted) throw 'Reply Pesan!'
+    if (!m.quoted) throw 'Reply Message!'
     if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
     if (!text) throw `Tidak ada teks`
     let sticker = global.db.data.sticker

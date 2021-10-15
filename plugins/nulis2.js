@@ -62,13 +62,13 @@ let handler  = async (m, { conn, args }) => {
   spawn(_spawnprocess, _spawnargs)
     .on('error', e => conn.reply(m.chat, util.format(e), m))
     .on('close', () => {
-      conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', 'Hati² ketahuan:v', m)
+      conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', 'Be careful:v', m)
     })
     .stdout.on('data', chunk => bufs.push(chunk))
 }
-handler.help = ['n'].map(v => v + 'ulis2 <teks>')
-handler.tags = ['tools']
-handler.command = /^nulis2$/i
+handler.help = ['w'].map(v => v + 'rite2 <teks>')
+handler.tags = ['nulis']
+handler.command = /^write2$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

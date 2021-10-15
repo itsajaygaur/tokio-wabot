@@ -1,14 +1,14 @@
 let handler = async (m, { conn, usedPrefix }) => {
     let id = m.chat
     conn.vote = conn.vote ? conn.vote : {}
-    if (!(id in conn.vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${usedPrefix}mulaivote* - untuk memulai vote`
+    if (!(id in conn.vote)) throw `_*no voting in this group!*_\n\n*${usedPrefix}start* - to start voting`
 
     let [reason, upvote, devote] = conn.vote[id]
     let mentionedJid = [...upvote, ...devote]
     m.reply(`
 *「 VOTE 」*
 
-*Alasan:* ${reason}
+*Reason:* ${reason}
 
 *UPVOTE*
 _Total: ${upvote.length}_
@@ -18,13 +18,13 @@ ${upvote.map(u => '@' + u.split('@')[0]).join('\n')}
 _Total: ${devote.length}_
 ${devote.map(u => '@' + u.split('@')[0]).join('\n')}
 
-*${usedPrefix}hapusvote* - untuk menghapus vote
+*${usedPrefix}unvote* - to delete votes
 
 _by ariffb_
 `.trim(), false, { contextInfo: { mentionedJid } })
 }
-handler.help = ['cekvote']
+handler.help = ['checkvote']
 handler.tags = ['vote']
-handler.command = /^cekvote$/i
+handler.command = /^checkvote$/i
 handler.group = true
 module.exports = handler
