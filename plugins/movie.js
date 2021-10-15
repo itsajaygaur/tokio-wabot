@@ -2,7 +2,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 const fetch = require('node-fetch')
 
 let handler = async (m, { conn }) => {
-   if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
+  if (!args[0]) throw 'give me a name !'
 	let url = `http://www.omdbapi.com/?apikey=742b2d09&t=${match[1]}&plot=full`
 	const response = await got(url);
 	const json = JSON.parse(response.body);
