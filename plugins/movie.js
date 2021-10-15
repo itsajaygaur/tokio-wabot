@@ -1,4 +1,3 @@
-let fetch = require('node-fetch')
 const { MessageType } = require('@adiwajshing/baileys');
 const got = require('got');
 //LyFE
@@ -27,7 +26,7 @@ const got = require('got');
 	msg += 'imdbRating : ' + json.imdbRating + '\n\n';
 	msg += 'imdbVotes  : ' + json.imdbVotes + '```';
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
-}));
+})
 
 handler.help = ['movie <search>']
 handler.tags = ['internet']
