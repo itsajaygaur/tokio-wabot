@@ -1,4 +1,4 @@
-const { MessageType } = require('@adiwajshing/baileys');
+let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text }) => {
 yh = global.loli
