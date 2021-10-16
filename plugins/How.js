@@ -1,7 +1,7 @@
 let handler = async (m, { conn, command, text }) => {
   if (!text) throw `Who is *${command.replace('how', '').toUpperCase()}*`
   conn.reply(m.chat, `
-how ${command.replace('how', '').toUpperCase()} *%name* ❓\n
+how ${command.replace('how', '').toUpperCase()} *${text}* ❓\n
 *${text}* is *${Math.floor(Math.random() * 101)}*% ${command.replace('how', '').toUpperCase()} 👽
 `.trim(), m, m.mentionedJid ? {
     contextInfo: {
