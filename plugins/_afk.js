@@ -3,7 +3,7 @@ handler.before = m => {
   let user = global.db.data.users[m.sender]
   if (user.afk > -1) {
     m.reply(`
-Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
+You stop AFK${user.afkReason ? ' after ' + user.afkReason : ''}
 Selama ${clockString(new Date - user.afk)}
 `.trim())
     user.afk = -1
@@ -17,8 +17,8 @@ Selama ${clockString(new Date - user.afk)}
     if (!afkTime || afkTime < 0) continue
     let reason = user.afkReason || ''
     m.reply(`
-Jangan tag dia!
-Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
+Don't tag him!
+He is AFK ${reason ? 'with reason ' + reason : 'no reason'}
 Selama ${clockString(new Date - afkTime)}
 `.trim())
   }
