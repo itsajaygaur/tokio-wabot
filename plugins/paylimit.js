@@ -4,17 +4,17 @@ let handler = async (m, { conn, text }) => {
     let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
-    if (!who) throw 'Tag salah satu lah'
+    if (!who) throw 'Tag one'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
-    if (!txt) throw 'Masukkan jumlah Limit yang akan diberi'
-    if (isNaN(txt)) throw 'Hanya angka'
+    if (!txt) throw 'Enter the amount of Limit to be given'
+    if (isNaN(txt)) throw 'only numbers'
     let poin = parseInt(txt)
     let limit = poin
     let pjk = Math.ceil(poin * pajak)
     limit += pjk
     if (limit < 1) throw 'Minimal 1'
     let users = global.db.data.users
-    if (limit > users[m.sender].limit) throw 'Limit tidak mencukupi untuk mentransfer'
+    if (limit > users[m.sender].limit) throw 'Insufficient limit to transfer'
     users[m.sender].limit -= limit
     users[who].limit += poin
 
