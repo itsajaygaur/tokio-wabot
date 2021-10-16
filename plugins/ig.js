@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+const { igdl } = require('../lib/scrape')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
