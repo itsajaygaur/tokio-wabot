@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         image: imgbase64,
       }
     );
-    await conn.sendFile(m.chat, data.data.image, "", "ᵏᵒⁿᵗᵒˡᵒᵈᵒⁿ", m, false);
+    await conn.sendFile(m.chat, data.data.image, "", "background removed!", m, false);
   } else throw `reply photo with command ${usedPrefix + command}`;
 };
 handler.help = ["removebg", "nobg"];
