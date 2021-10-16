@@ -10,7 +10,7 @@ let handler = async (m, { conn, args }) => {
   if (json.text) m.reply(json.text);
   else throw eror
 };
-handler.help = ["uselessfacts", "ulf"];
+handler.help = ["uselessfacts/ulf"];
 handler.tags = ["fun"];
 
 handler.command = /^(uselessfacts|ulf)$/i;
