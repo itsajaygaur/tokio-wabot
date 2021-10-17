@@ -2,54 +2,54 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
-  'main': 'Main',
-  'game': 'Game',
-  'xp': 'Exp & Limit',
-  'sticker': 'Sticker',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'premium': 'Premium',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'Logo & Writing',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'exp': 'Register',
-  'fun': 'Fun',
-  'audio': 'Audio',
-  'maker': 'Maker',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absent',
-  'jadibot': 'Get Bot',
-  'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
-  'info': 'Info',
-  'Only for Indonesians': 'Only For Indonesians',
+  'main': 'MAIN',
+  'game': 'GAME',
+  'xp': 'EXP & LIMIT',
+  'sticker': 'STICKER',
+  'quotes': 'QUOTES',
+  'admin': 'ADMIN',
+  'group': 'GROUP',
+  'premium': 'PREMIUM',
+  'internet': 'INTERNET',
+  'anonymous': 'ANONYMOUS CHAT',
+  'nulis': 'LOGO & WRITING',
+  'downloader': 'DOWNLOADER',
+  'tools': 'TOOLS',
+  'exp': 'REGISTER',
+  'fun': 'FUN',
+  'audio': 'AUDIO',
+  'maker': 'MAKER',
+  'database': 'DATABASE',
+  'vote': 'VOTING',
+  'absen': 'ABSENT',
+  'jadibot': 'GET BOT',
+  'owner': 'OWNER',
+  'host': 'HOST',
+  'advanced': 'ADVANCED',
+  'info': 'INFO',
+  'Only for Indonesians': 'ONLY FOR INDONESIANS',
 }
 const defaultMenu = {
   before: `
 
 👋🏻(❤️ω❤️) Ohayō %name, how can i help you?
 
-🔖Left: *%limit Limit*
-🔰Role: *%role*
-📈Level: *%level* 
-🎯Total XP: *%totalexp*
+🪵 Left: *%limit Limit*
+🎗️ Role: *%role*
+🛕 Level: *%level* 
+☕ Total XP: *%totalexp*
 
-💹Prefix: *%p*
-⏱️Uptime: *%uptime (%muptime)*
-📊Database: *%rtotalreg of %totalreg*
+〽️ Prefix: *%p*
+⏰ Uptime: *%uptime (%muptime)*
+🎪 Database: *%rtotalreg of %totalreg*
 
-All commands are listed below 👇🏻
+All usable commands are listed below 👇🏻
 
 %readmore`.trimStart(),
   header: ' *「 %category 」*',
-  body: ' ❏ %cmd %islimit %isPremium',
+  body: ' _❏ %cmd_ %islimit %isPremium',
   footer: ' ',
-  after: `*Hope you're enjoying the bot, have a great day* 🌻
+  after: `*Hope you're enjoying the bot, have a great day* 🌟
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
