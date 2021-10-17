@@ -6,9 +6,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     m.reply(`Done!`)
 
 }
-handler.help = ['unvote/delete']
+handler.help = ['unvote/delvote']
 handler.tags = ['vote']
-handler.command = /^(delete|hapus)vote$/i
+handler.command = /^(delete|delvote)vote$/i
 handler.group = true
 handler.admin = true
 module.exports = handler
