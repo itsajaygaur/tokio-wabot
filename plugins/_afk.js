@@ -4,7 +4,7 @@ handler.before = m => {
   if (user.afk > -1) {
     m.reply(`
 You stop AFK${user.afkReason ? ' after ' + user.afkReason : ''}
-Selama ${clockString(new Date - user.afk)}
+During ${clockString(new Date - user.afk)}
 `.trim())
     user.afk = -1
     user.afkReason = ''
