@@ -26,7 +26,7 @@ ${upvote.map(u => '@' + u.split('@')[0]).join('\n')}
 _Total: ${devote.length}_
 ${devote.map(u => '@' + u.split('@')[0]).join('\n')}
 
-*${usedPrefix}hapusvote* - to delete votes
+*${usedPrefix}delvote* - to delete votes
 
 _by david_
 `.trim(), false, { contextInfo: { mentionedJid } })
