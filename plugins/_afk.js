@@ -19,7 +19,7 @@ Selama ${clockString(new Date - user.afk)}
     m.reply(`
 Don't tag him!
 He is AFK ${reason ? 'with reason ' + reason : 'no reason'}
-Selama ${clockString(new Date - afkTime)}
+During ${clockString(new Date - afkTime)}
 `.trim())
   }
   return true
