@@ -13,7 +13,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.xteam.xyz': 'efe8f3584235b7d4',
+  'https://api.xteam.xyz': 'MahliKey',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'x17SNoSIMmJY6sG4hhYF2k5TRxW',
   'https://pencarikode.xyz': 'pais',
