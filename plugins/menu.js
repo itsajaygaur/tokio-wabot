@@ -46,9 +46,9 @@ const defaultMenu = {
 All usable commands are listed below 👇🏻
 
 %readmore`.trimStart(),
-  header: '┌─ *「 %category 」*',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└─────\n',
+  header: ' ◪ *%category*',
+  body: ' ❏ %cmd %islimit %isPremium',
+  footer: ' ',
   after: `*Hope you're enjoying the bot, have a great day* 🌟
 `,
 }
