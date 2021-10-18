@@ -4,7 +4,7 @@ let handler = async (m, { conn, args: [effect], text: txt }) => {
   let { effects } = await (await (fetch(global.API('xteam', '/ephoto')))).json()
   if (!effect) throw '*List Effect*\n\n' + effects.sort((a, b) => a - b).join('\n')
   effect = effect.toLowerCase()
-  if (!effect in effects) throw `Efek *${effect}* tidak ditemukan`
+  if (!effect in effects) throw `Effect *${effect}* not found`
   let [text, text2, ...text3] = txt.replace(effect, '').trimStart().split(split)
   text3 = text3.join(split)
   let url = global.API('xteam', '/ephoto/' + effect, { text, text2, text3 }, 'APIKEY')
