@@ -13,7 +13,7 @@ let charaingfo = `🧧 *Name:* ${name}
   conn.sendFile(m.chat, image_url, '', charaingfo, m)
 }
 handler.help = ['character <name>']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^(chara|character)$/i
 //kyaa jangan biarkan wabot-aq terbengkalai sampai nurutomo kembali
 // Command - Re Edited -- TOXIC-DEVIL == || Character Type ||
