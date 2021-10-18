@@ -14,7 +14,7 @@ let mangaingfo = `*Title:* ${title}
   conn.sendFile(m.chat, image_url, '', mangaingfo, m)
 }
 handler.help = ['manga <title>']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^(manga)$/i
 //udah di maapin kan?
 module.exports = handler
