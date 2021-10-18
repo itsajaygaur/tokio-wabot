@@ -45,7 +45,7 @@ Generation: ${json.generation}\n\n
   else throw json.error;
 };
 handler.help = ["pokemon"].map((v) => v + " <pokemon>");
-handler.tags = ["internet"];
+handler.tags = ["anime"];
 handler.command = /^(pokemon|pokedex)$/i;
 
 module.exports = handler;
