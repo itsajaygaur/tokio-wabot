@@ -27,7 +27,6 @@ let tags = {
   'owner': 'OWNER',
   'host': 'HOST',
   'advanced': 'ADVANCED',
-  'Only for Indonesians': 'ONLY FOR INDONESIANS',
 }
 const defaultMenu = {
   before: `
