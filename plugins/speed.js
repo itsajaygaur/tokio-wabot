@@ -58,7 +58,7 @@ ${util.format(conn.user.phone)}
 `.trim() + '```'}
 
 💻 *Server Info* :
-RAM: ${format(os.totalmem() - os.freemem())} / ${format(os.totalmem())}
+ROM: ${format(os.totalmem() - os.freemem())} / ${format(os.totalmem())}
 
 _NodeJS Memory Usage_
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${format(used[key])}`).join('\n') + '```'}
