@@ -12,7 +12,7 @@ let handler = async(m, { conn }) => {
   throw stiker.toString()
 }
 handler.help = ['pikachu']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^pikachu/i
 
 module.exports = handler
