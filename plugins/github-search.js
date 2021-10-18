@@ -20,14 +20,14 @@ ${repo.open_issues} Issue${repo.description ? `
     }).join('\n\n')
     m.reply(str)
 }
-handler.help = ['githubsearch'].map(v => v + ' <search>')
+handler.help = ['github'].map(v => v + ' <search>')
 handler.tags = ['tools']
 
-handler.command = /^g(ithub|h)search$/i
+handler.command = /^github$/i
 
 module.exports = handler
 
-function formatDate(n, locale = 'id') {
+function formatDate(n, locale = 'en') {
     let d = new Date(n)
     return d.toLocaleDateString(locale, {
       weekday: 'long',
