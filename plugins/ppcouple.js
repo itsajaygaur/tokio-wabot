@@ -9,7 +9,7 @@ let handler = async (m, { conn }) => {
   await conn.sendFile(m.chat, json.result.female, '', 'girl', m)
 }
 handler.help = ['ppcouple/ppcp']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^(pp(cp|couple))$/i
 
 module.exports = handler
