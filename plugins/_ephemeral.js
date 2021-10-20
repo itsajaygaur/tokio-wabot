@@ -7,8 +7,8 @@ module.exports = {
       case WA_MESSAGE_STUB_TYPE.CHANGE_EPHEMERAL_SETTING:
         if (chat.detect)
           this.sendMessage(chatUpdate.jid, +m.messageStubParameters[0] ?
-            'Pesan Sementara ON' :
-            'Pesan Sementara OFF'
+            'Order Temporarily ON' :
+            'Order Temporarily OFF'
             , 'extendedTextMessage')
         break
     }
