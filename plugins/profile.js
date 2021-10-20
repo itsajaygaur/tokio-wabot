@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
 🧩Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
 
-⛓️Link: https://wa.me/${who.split`@`[0]}${registered ? '\nAge: ' + age : ''}
+⛓️Link: https://wa.me/${who.split`@`[0]}${registered ? '\n\n🎈Age: ' + age : ''}
 
 ☕XP: ${exp} (${math <= 0 ? `Ready to *${usedPrefix}levelup*` : `${math} XP left to levelup`})
 
