@@ -21,7 +21,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
 ⛓️Link: https://wa.me/${who.split`@`[0]}${registered ? '\nAge: ' + age : ''}
 
-☕XP: ${exp} <${math <= 0 ? `Ready to *${usedPrefix}levelup*` : `${math} XP left to levelup`}>
+☕XP: ${exp} (${math <= 0 ? `Ready to *${usedPrefix}levelup*` : `${math} XP left to levelup`})
 
 🎟️Level: ${level}
 
