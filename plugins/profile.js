@@ -31,7 +31,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
 🔏Registered: ${registered ? 'Yes (' + new Date(regTime) + ')': 'No'}
 
-🏮Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\nLast Claim: ' + new Date(lastclaim) : ''}
+🏮Premium: ${prem ? 'Yes' : 'No'}${lastclaim > 0 ? '\n\n🍁Last Claim: ' + new Date(lastclaim) : ''}
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
