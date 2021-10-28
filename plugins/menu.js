@@ -41,7 +41,7 @@ const defaultMenu = {
 〽️ Prefix: *%p*
 ⏰ Uptime: *%uptime (%muptime)*
 🎪 Database: *%rtotalreg of %totalreg*
-🏮 Github: github.com/itsajaygaur/tokio
+🏮 Github: github.com/itsajaygaur/tokio-wabot
 
 👇🏻 All usable commands are listed below 
 
