@@ -2,6 +2,8 @@
 
 English version of wabot-aq
 
+Don't forget to give it a star  🌟
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/itsajaygaur/tokio-wabot)
 
 ## FOR TERMUX/UBUNTU/SSH USER
@@ -182,7 +184,9 @@ Author / Creator | Editor
 
 
 
-Best Regards: tokio
-
 Don't forget to give it a star 🌟
+
+Best regards: tokio
+
+
 
