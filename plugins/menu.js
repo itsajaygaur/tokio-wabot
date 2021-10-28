@@ -41,6 +41,7 @@ const defaultMenu = {
 〽️ Prefix: *%p*
 ⏰ Uptime: *%uptime (%muptime)*
 🎪 Database: *%rtotalreg of %totalreg*
+🏮 Github: github.com/itsajaygaur/tokio
 
 👇🏻 All usable commands are listed below 
 
