@@ -58,7 +58,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
-    let locale = 'id'
+    let locale = 'en'
     // d.getTimeZoneOffset()
     // Offset -420 is 18.00
     // Offset    0 is  0.00
