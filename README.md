@@ -182,4 +182,7 @@ Author / Creator | Editor
 
 
 
-Best Regards. tokio
+Best Regards: tokio
+
+Don't forget to give it a star 🌟
+
