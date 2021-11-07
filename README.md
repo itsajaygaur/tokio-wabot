@@ -82,6 +82,7 @@ node .
 ---------
 
 ## Arguments `node . [--options] [<session name>]`
+#### Example: `node . --self --restrict --autoread`
 
 ### `--self`
 
@@ -108,33 +109,14 @@ Set prefix
 
 Used for [heroku](https://heroku.com/) or scan through website
 
-### `--db <json-server-url>`
+### `--db <your_mongo_URI>`
 
-Use external db instead of local db, 
-Example Server `https://json-server.nurutomo.repl.co/`
-Code: `https://repl.it/@Nurutomo/json-server`
+Use external db instead of local db
 
-`node . --db 'https://json-server.nurutomo.repl.co/'`
+Example:
 
-The server should have like this specification
+`node . --db '<YOUR_MONGO_URI_HERE>'`
 
-#### GET
-
-```http
-GET /
-Accept: application/json
-```
-
-#### POST
-
-```http
-POST /
-Content-Type: application/json
-
-{
- data: {}
-}
-```
 
 ### `--big-qr`
 
