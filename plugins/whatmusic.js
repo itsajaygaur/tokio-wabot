@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
   if (!/video|audio/.test(mime)) throw `Reply to the music you want to find with a reply *${usedPrefix + command}*`
- m.reply(global wait)
+ m.reply(global.wait)
 				const bodyForm = new FormData()
 			        bodyForm.append('audio', await q.download(), 'music.mp3')
            			bodyForm.append('apikey', 'apivinz')

@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, args }) => {
-  if (!args[0]) throw 'Uhm... where's the url??'
+  if (!args[0]) throw 'Uhm... where\'s the url??'
   let res = await fetch(global.API('xteam', '/dl/fb', {
     url: args[0]
   }, 'APIKEY'))
