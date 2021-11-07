@@ -18,6 +18,7 @@ let tags = {
   'fun': 'FUN',
   'audio': 'AUDIO',
   'maker': 'MAKER',
+  'videomaker': 'VIDEOMAKER',
   'database': 'DATABASE',
   'exp': 'REGISTER',
   'vote': 'VOTING',
