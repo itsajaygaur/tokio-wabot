@@ -1,6 +1,8 @@
 let fs = require('fs')
 let path = require('path')
+let fetch = require('node-fetch')
 let levelling = require('../lib/levelling')
+const thumb = fs.readFileSync('./src/thumb.jpg')
 let tags = {
   'main': 'MAIN',
   'info': 'INFO',
@@ -32,7 +34,7 @@ let tags = {
 const defaultMenu = {
   before: `
 
-👋🏻(❤️ω❤️) Ohayō %name, how can i help you?
+🙏🏻 Namaste %name, how can i help you?
 
 🪵 Left: *%limit Limit*
 🎗️ Role: *%role*
@@ -40,15 +42,14 @@ const defaultMenu = {
 ☕ Total XP: *%totalexp*
 
 〽️ Prefix: *%p*
-⏰ Uptime: *%uptime (%muptime)*
-🎪 Database: *%rtotalreg of %totalreg*
-🏮 Github: github.com/itsajaygaur/tokio-wabot
+📅 Date: *%week, %date*
+💠 Github: github.com/itsajaygaur/tokio-wabot
 
 👇🏻 All usable commands are listed below 
 
 %readmore`.trimStart(),
-  header: '📺  *%category*',
-  body: ' 🪶 %cmd %islimit %isPremium',
+  header: '        *━━❰･%category･❱━━*',
+  body: ' 🌠 %cmd %islimit %isPremium',
   footer: ' ',
   after: `🌟 *Hope you're enjoying bot, have a great day* 
 `,
@@ -149,7 +150,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.reply(m.chat, text.trim(), m)
+    conn.send2ButtonImg(m.chat, thumb, `🏮 I\'m ${conn.user.name}`, text.trim(), 'owner', '-owner', 'rules', '.rules', m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
