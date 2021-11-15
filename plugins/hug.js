@@ -21,7 +21,7 @@ let handler = async (m, { conn, command }) => {
 		})
 	} else throw json
 }
-handler.help = ["hug", "pat", "punch", "lick", "slap", "bully", "kiss"]
+handler.help = ["hug", "pat", "bonk", "lick", "slap", "bully", "kiss"]
 handler.tags = ["fun"]
 handler.command = /^(hug|pat|punch|lick|slap|bully|kiss)$/i
 
