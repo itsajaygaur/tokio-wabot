@@ -153,9 +153,35 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.viewonce = isEnable
       break
+      case 'simi':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw 0
+        }
+      }
+      chat.simi = isEnable
+      break
     default:
       if (!/[01]/.test(command)) throw `
-List option: welcome | delete | public | antilink | autolevelup | detect | document | whitelistmycontacts | restrict | nyimak | autoread | pconly | gconly | swonly | viewonce
+List option:
+
+| welcome 
+| delete 
+| public 
+| antilink 
+| autolevelup 
+| detect 
+| document 
+| whitelistmycontacts 
+| restrict 
+| nyimak 
+| autoread 
+| pconly 
+| gconly 
+| swonly 
+| simi
+| viewonce
 
 Example:
 ${usedPrefix}enable welcome
