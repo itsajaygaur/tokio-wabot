@@ -1,4 +1,4 @@
-let handler = async m => m.reply(`
+let handler = async ( m, {usedPrefix} ) => m.reply(`
 🎴 *OPTIONS:*
 💫Cry
 💫Kiss
@@ -26,7 +26,7 @@ let handler = async m => m.reply(`
 💫Happy
 💫Poke
 💫Dance
-🏮 *Usage example:* !pat @user/quote user
+🏮 *Usage example:* ${usedPrefix}pat @user/quote user
 `.trim()) 
 handler.help = ['reactions']
 handler.tags = ['fun']
