@@ -1,10 +1,10 @@
-# tokio
+# BayMax
 
-English version of wabot-aq
+English version of BayMax
 
 Don't forget to give it a star  🌟
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/itsajaygaur/tokio-wabot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ToshiroHitsugaya223/tokio-wabot)
 
 ## FOR TERMUX/UBUNTU/SSH USER
 
@@ -158,17 +158,13 @@ conn.logger.level = 'debug'
 
 -------
 
-[![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo) | [![Ajay](https://github.com/itsajaygaur.png?size=100)](https://github.com/itsajaygaur/tokio-wabot) 
-----|----
-[Nurutomo](https://github.com/Nurutomo) | [Ajay](https://github.com/itsajaygaur/tokio-wabot) 
-Author / Creator | Editor
  
 
 
 
 Don't forget to give it a star 🌟
 
-Best regards: tokio
+Best regards: BayMax
 
 
 
