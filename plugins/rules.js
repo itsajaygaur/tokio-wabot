@@ -1,17 +1,21 @@
 let handler = async m => m.reply(`
-🏮 *BOT RULES*
-
-🔖 _Do not call bot, if you do then you'll get automatically blocked by bot._
-    
-🔖 _Do not spam bot with commands, if bot is not responding then it means either bot is off or there's internet issue at owner's end._
-    
-🔖 _Do not abuse/disrespect bot and its owner._
-    
-🔖 _If you see any bug/error in bot then report it to owner with the command !bug/report <problem>._
-    
-🔖 _If you want this bot in your group then contact owner by typing !owner/creator._
-    
-🔖 _Enjoy the bot and have fun._
+-------------------[𝙶𝚎𝚝 𝚃𝚑𝚒𝚜 𝙱𝚘𝚝]------------------
+| 𝙽𝚊𝚖𝚎 : 𝙼𝚒𝚔𝚞 <3
+| 𝙿𝚛𝚎𝚏𝚒𝚡: #
+| 𝚅𝚎𝚛 : 𝙼𝚘𝚍𝚍𝚎𝚍 2.4
+|---------------------[𝙲𝙾𝙽𝚃𝙰𝙲𝚃]------------------------                                                 
+| ⚜️𝙰𝙳𝙼𝙸𝙽: *𝙳𝚘𝚟𝚎-𝚔𝚞𝚗* 
+| 🔰𝚆𝙿: https://wa.me/917736306385
+|______________________________________
+| 🔱𝙰𝙳𝙼𝙸𝙽: *𝚂𝙸𝙳*
+| 🔰𝚆𝙿: https://wa.me/918552991392
+|______________________________________
+| ⚜️𝙰𝙳𝙼𝙸𝙽: *𝚄𝚍𝚍𝚑𝚊𝚟*
+| 🔰𝚆𝙿: https://wa.me/918554828489
+|______________________________________
+| ⚜️𝙰𝙳𝙼𝙸𝙽: *𝚁𝚊𝚋𝚋𝚒𝚝*🐰
+| 🔰𝚆𝙿: https://wa.me/91902101062
+|______________________________________
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['rules']
 handler.tags = ['info']
