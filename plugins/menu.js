@@ -42,7 +42,7 @@ const defaultMenu = {
 ☕ Total XP: *%totalexp*
 
 〽️ Prefix: *%p*
-📅 Date: *%week, %date*
+📅 tarix: *%week, %date*
 💠 Github: github.com/itsajaygaur/tokio-wabot
 
 👇🏻 All usable commands are listed below 
