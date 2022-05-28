@@ -23,16 +23,16 @@
     "js-whatsapp"
     "multi-device"
   ],
-  "homepage": "https://github.com/Duxlin/tokio-wabot",
+  "homepage": "https://github.com/Duxlin/wabot-aq",
   "author": {
     "name": "Kanambo"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Duxlin/tokio-wabot.git"
+    "url": "git+https://github.com/Duxlin/wabot-aq.git"
   },
   "bugs": {
-    "url": "https://github.com/Duxlin/tokio-wabot/issues"
+    "url": "https://github.com/Duxlin/wabot-aq/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
