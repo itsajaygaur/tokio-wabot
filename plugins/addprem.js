@@ -17,6 +17,6 @@ handler.help = ['addprem [@user]']
 handler.tags = ['owner']
 handler.command = /^(add|plus|\+)prem$/i
 
-handler.rowner = false
+handler.rowner = true
 
 module.exports = handler
