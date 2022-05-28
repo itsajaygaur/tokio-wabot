@@ -1,5 +1,5 @@
 {
-  "name": "wabot-aq",
+  "name": "tokio-wabot",
   "version": "2.5.1",
   "description": " WhatsApp Using Lib Baileys Multi Device",
   "depecrated": false,
@@ -23,16 +23,16 @@
     "js-whatsapp"
     "multi-device"
   ],
-  "homepage": "https://github.com/Nurutomo/wabot-aq",
+  "homepage": "https://github.com/Duxlin/tokio-wabot",
   "author": {
-    "name": "Nurutomo"
+    "name": "Kanambo"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nurutomo/wabot-aq.git"
+    "url": "git+https://github.com/Duxlin/tokio-wabot.git"
   },
   "bugs": {
-    "url": "https://github.com/Nurutomo/wabot-aq/issues"
+    "url": "https://github.com/Duxlin/tokio-wabot/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
