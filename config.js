@@ -1,9 +1,9 @@
 let fs = require('fs')
 let chalk = require('chalk')
 
-global.owner = ['254114148625'] // Put your number here
+global.owner = ['918396901628','254114148625'] // Put your number here
 global.mods = [] // Want some help?
-global.prems = ['254114148625'] // Premium user has unlimited limit
+global.prems = [] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -29,7 +29,7 @@ const spack = fs.readFileSync("lib/exif.json")
 const stickerpack = JSON.parse(spack)
 if (stickerpack.spackname == '') {
   var sticker_name = 'I hope you\'re fine'
-  var sticker_author = 'kazukafu'
+  var sticker_author = 'Kanambo'
 } else {
   var sticker_name = stickerpack.spackname
   var sticker_author = stickerpack.sauthor
