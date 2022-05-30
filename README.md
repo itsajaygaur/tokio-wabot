@@ -4,7 +4,7 @@ English version of wabot-aq
 
 Don't forget to give it a star  🌟
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/itsajaygaur/tokio-wabot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Chingkheinganba06/tokio-wabot)
 
 ## FOR TERMUX/UBUNTU/SSH USER
 
