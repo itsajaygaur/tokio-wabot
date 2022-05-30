@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Duxlin/wabot-aq.git"
+    "url": "git+https://github.com/Duxlin/tokio-wabot.git"
   },
   "bugs": {
     "url": "https://github.com/Nurutomo/wabot-aq/issues"
