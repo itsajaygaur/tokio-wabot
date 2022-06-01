@@ -147,7 +147,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
       level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
-      readmore: readmore
+      readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     conn.send2ButtonImg(m.chat, FB_IMG_1652624635282, `🤖 I\'m ${conn.user.name}`, text.trim(), 'owner', `${_p}owner`, 'rules', `${_p}rules`, m)
