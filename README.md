@@ -4,7 +4,7 @@ English version of wabot-aq
 
 Don't forget to give it a star  🌟
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/itsajaygaur/tokio-wabot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kanambp/tokio-wabot)
 
 ## FOR TERMUX/UBUNTU/SSH USER
 
@@ -14,7 +14,7 @@ apt install git -y
 apt install nodejs -y
 apt install ffmpeg -y
 apt install imagemagick -y
-git clone https://github.com/itsajaygaur/tokio-wabot
+git clone https://github.com/kanambp/tokio-wabot
 cd tokio-wabot
 npm install
 npm update
