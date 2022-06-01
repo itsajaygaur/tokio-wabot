@@ -2,7 +2,7 @@ let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let levelling = require('../lib/levelling')
-const thumb = fs.readFileSync('./src/thumb.jpg')
+const thumb = fs.readFileSync('./src/Mr.Developer20220601_080106.jpg')
 let tags = {
   'main': 'MAIN',
   'info': 'INFO',
@@ -49,7 +49,7 @@ const defaultMenu = {
 
 %readmore`.trimStart(),
   header: '        *━━❰･%category･❱━━*',
-  body: ' 🌠 %cmd %islimit %isPremium',
+  body: ' 🦄 %cmd %islimit %isPremium',
   footer: ' ',
   after: `🌟 *Hope you're enjoying bot from Legend_hacke, have a great time by Kanambo* 
 `,
