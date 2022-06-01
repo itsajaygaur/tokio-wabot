@@ -2,7 +2,7 @@ let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
 let levelling = require('../lib/levelling')
-const thumb = fs.readFileSync('./src/Mr.Developer20220601_080106.jpg')
+const FB_IMG_1652624635282 = fs.readFileSync('./src/FB_IMG_1652624635282.jpg')
 let tags = {
   'main': 'MAIN',
   'info': 'INFO',
@@ -49,7 +49,7 @@ const defaultMenu = {
 
 %readmore`.trimStart(),
   header: '        *━━❰･%category･❱━━*',
-  body: ' 🦄 %cmd %islimit %isPremium',
+  body: ' 🌹 %cmd %islimit %isPremium',
   footer: ' ',
   after: `🌟 *Hope you're enjoying bot from Legend_hacke, have a great time by Kanambo* 
 `,
@@ -147,10 +147,10 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
       level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
-      readmore: readMore
+      readmore: readmore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.send2ButtonImg(m.chat, Mr.Developer20220601_080106, `🤖 I\'m ${conn.user.name}`, text.trim(), 'owner', `${_p}owner`, 'rules', `${_p}rules`, m)
+    conn.send2ButtonImg(m.chat, FB_IMG_1652624635282, `🤖 I\'m ${conn.user.name}`, text.trim(), 'owner', `${_p}owner`, 'rules', `${_p}rules`, m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
