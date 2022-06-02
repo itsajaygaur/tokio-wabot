@@ -1,0 +1,12 @@
+let handler = async (m, { conn }) => {
+    conn.who am i = conn.who am i ? conn.who am i : {}
+    let id = m.chat
+    if (!(id in conn.who am i)) throw false
+    let json = conn.who am i[id][1]
+    let ans = json.result.Answer
+    let clue = ans.replace(/[bcdfghjklmnpqrstvwxyz]/g, '_')
+    m.reply('```' + clue + '```')
+}
+handler.command = /^who$/i
+handler.limit = true
+module.exports = handler
