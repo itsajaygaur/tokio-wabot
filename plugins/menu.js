@@ -34,24 +34,20 @@ let tags = {
 const defaultMenu = {
   before: `
 
-🙋 Hello %name, how can i help you?
-
-🪵 Left: *%limit Limit*
-🎗️ Role: *%role*
-🛕 Level: *%level* 
-☕ Total XP: *%totalexp*
+🙋 Hello %name, how can i help you
 
 〽️ Prefix: *%p*
 📅 Date: *%week, %date*
-💠 Github: github.com/Kanambp/tokio-wabot
+💠 Repo: Github.com/kanambp/tokio-wabot
+🦄 Owner: Doesn't Matter! Type .owner
 
-👇🏻 All usable commands are listed below 
+👇🏻 For all commands tap Read more. Do not spam!
 
 %readmore`.trimStart(),
   header: '        *━━❰･%category･❱━━*',
-  body: ' 🌹 %cmd %islimit %isPremium',
+  body: ' 🏵️ %cmd %islimit %isPremium',
   footer: ' ',
-  after: `🌟 *Hope you enjoy the bot God bless 🙏 Kanambo* 
+  after: `💕 *© _KANAMBO'S SERVER_* 
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -150,7 +146,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.send2ButtonImg(m.chat, FB_IMG_1652624635282, `🤖 I\'m ${conn.user.name}`, text.trim(), 'owner', `${_p}owner`, 'rules', `${_p}rules`, m)
+    conn.send2ButtonImg(m.chat, thumb,  `💎 *I\'m ${conn.user.name}*`, text.trim(), 'OWNER', '-creator', 'BOT STATUS', '-speed', m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
