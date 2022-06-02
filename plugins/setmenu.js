@@ -43,7 +43,6 @@ Universal:
 $maxexp (Exp To Level Up)
 %totalexp (Total Exp)
 %xp4levelup (Exp needed to level up)
-%limit (Limit)
 %level (level)
 %role (Role)
 %name (Name)
@@ -64,6 +63,5 @@ Header & Footer Menu Section:
 
 Body Menu Section:
 %cmd (Command)
-%islimit (If the command is limited)
 %isPremium (If command premium)
 `.trim()
