@@ -27,7 +27,6 @@ module.exports = {
         if (typeof user !== 'object') global.db.data.users[m.sender] = {}
         if (user) {
           if (!isNumber(user.exp)) user.exp = 0
-          if (!isNumber(user.limit)) user.limit = 10
           if (!isNumber(user.lastclaim)) user.lastclaim = 0
           if (!('registered' in user)) user.registered = false
           if (!user.registered) {
@@ -227,9 +226,7 @@ module.exports = {
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
-          if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-            this.reply(m.chat, `Your limit is up, please buy via *${usedPrefix}buy*`, m)
-            continue // Limit run out
+          
           }
           if (plugin.level > _user.level) {
             this.reply(m.chat, `level required ${plugin.level} to use this command. Your level ${_user.level}`, m)
@@ -255,10 +252,7 @@ module.exports = {
             isPrems,
             chatUpdate,
           }
-          try {
-            await plugin.call(this, m, extra)
-            if (!isPrems) m.limit = m.limit || plugin.limit || false
-          } catch (e) {
+            catch (e) {
             // Error occured
             m.error = e
             console.error(e)
@@ -276,22 +270,15 @@ module.exports = {
               } catch (e) {
                 console.error(e)
               }
-            }
-            if (m.limit) m.reply(+ m.limit + ' Limit used')
-          }
+           
           break
         }
       }
     } finally {
       //console.log(global.db.data.users[m.sender])
       let user, stats = global.db.data.stats
-      if (m) {
-        if (m.sender && (user = global.db.data.users[m.sender])) {
-          user.exp += m.exp
-          user.limit -= m.limit * 1
+      if (m) 
         }
-
-        let stat
         if (m.plugin) {
           let now = + new Date
           if (m.plugin in stats) {
@@ -349,9 +336,9 @@ module.exports = {
         }
         break
       case 'promote':
-        text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+        text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is promoted Admin 🤗```')
       case 'demote':
-        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```sorry you no longer Admin 😔```')
         text = text.replace('@user', '@' + participants[0].split('@')[0])
         if (chat.detect) this.sendMessage(jid, text, MessageType.extendedText, {
           contextInfo: {
