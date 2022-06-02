@@ -34,7 +34,7 @@ let tags = {
 const defaultMenu = {
   before: `
 
-🙏🏻 Hello %name, how can i help you?
+🙋 Hello %name, how can i help you?
 
 🪵 Left: *%limit Limit*
 🎗️ Role: *%role*
@@ -51,7 +51,7 @@ const defaultMenu = {
   header: '        *━━❰･%category･❱━━*',
   body: ' 🌹 %cmd %islimit %isPremium',
   footer: ' ',
-  after: `🌟 *Hope you're enjoying bot from Legend_hacke, have a great time by Kanambo* 
+  after: `🌟 *Hope you enjoy the bot God bless 🙏 Kanambo* 
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
