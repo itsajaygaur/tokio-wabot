@@ -12,7 +12,7 @@ handler.tags = ['admin']
 handler.command = /^(remove|\-)$/i
 
 handler.owner = true
-handler.rowner = true
+handler.rowner = false
 handler.mods = false
 handler.premium = false
 handler.group = true
@@ -22,6 +22,6 @@ handler.admin = true
 handler.botAdmin = true
 
 handler.fail = null
-handler.limit = true
+handler.limit = false
 
 module.exports = handler
