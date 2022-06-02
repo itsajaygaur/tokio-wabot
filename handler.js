@@ -21,7 +21,7 @@ module.exports = {
           break
       }
       m.exp = 0
-      m.limit = false
+      m.limit = true
       try {
         let user = global.db.data.users[m.sender]
         if (typeof user !== 'object') global.db.data.users[m.sender] = {}
@@ -119,7 +119,7 @@ module.exports = {
       let participants = m.isGroup ? groupMetadata.participants : [] || []
       let user = m.isGroup ? participants.find(u => u.jid == m.sender) : {} // User Data
       let bot = m.isGroup ? participants.find(u => u.jid == this.user.jid) : {} // Your Data
-      let isAdmin = user.isAdmin || user.isSuperAdmin || false // Is User Admin?
+      let ispromotedtoAdmin = user.ispromotedtoAdmin || user.isSuperAdmin || false // Is User Admin?
       let isBotAdmin = bot.isAdmin || bot.isSuperAdmin || false // Are you Admin?
       for (let name in global.plugins) {
         let plugin = global.plugins[name]
