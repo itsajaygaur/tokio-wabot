@@ -1,5 +1,5 @@
 function handler(m) {
-  // Ini cuma contoh, jgn di uncomment -_-
+  // This is just an example, do not uncomment -_-
   // F this.sendContact(m.chat, '254114148625', 'kanambo', '2348106542427' , 'owner love' m)
   this.sendContact(m.chat, '254114148625' , 'kanambo' , '+2348106542427' , 'owner love', m)
 }
