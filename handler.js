@@ -21,12 +21,13 @@ module.exports = {
           break
       }
       m.exp = 0
-      m.limit = true
+      m.limit = false
       try {
         let user = global.db.data.users[m.sender]
         if (typeof user !== 'object') global.db.data.users[m.sender] = {}
         if (user) {
           if (!isNumber(user.exp)) user.exp = 0
+          if (!isNumber(user.limit)) user.limit = 10
           if (!isNumber(user.lastclaim)) user.lastclaim = 0
           if (!('registered' in user)) user.registered = false
           if (!user.registered) {
@@ -119,7 +120,7 @@ module.exports = {
       let participants = m.isGroup ? groupMetadata.participants : [] || []
       let user = m.isGroup ? participants.find(u => u.jid == m.sender) : {} // User Data
       let bot = m.isGroup ? participants.find(u => u.jid == this.user.jid) : {} // Your Data
-      let ispromotedtoAdmin = user.ispromotedtoAdmin || user.isSuperAdmin || false // Is User Admin?
+      let isAdmin = user.isAdmin || user.isSuperAdmin || false // Is User Admin?
       let isBotAdmin = bot.isAdmin || bot.isSuperAdmin || false // Are you Admin?
       for (let name in global.plugins) {
         let plugin = global.plugins[name]
@@ -226,7 +227,9 @@ module.exports = {
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
           if (xp > 200) m.reply('Ngecit -_-') // Hehehe
           else m.exp += xp
-          
+          if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
+            this.reply(m.chat, `Your limit is up, please buy via *${usedPrefix}buy*`, m)
+            continue // Limit run out
           }
           if (plugin.level > _user.level) {
             this.reply(m.chat, `level required ${plugin.level} to use this command. Your level ${_user.level}`, m)
@@ -252,7 +255,11 @@ module.exports = {
             isPrems,
             chatUpdate,
           }
-            catch (e) {
+          try {
+            await plugin.call(this, m, extra)
+            if (!isPrems) m.limit = m.limit || plugin.limit || false
+            if (!isUser) m.limit = m.limit || plugin.limit ||false
+          } catch (e) {
             // Error occured
             m.error = e
             console.error(e)
@@ -270,15 +277,22 @@ module.exports = {
               } catch (e) {
                 console.error(e)
               }
-           
+            }
+            if (m.limit) m.reply(+ m.limit + ' Limit used')
+          }
           break
         }
       }
     } finally {
       //console.log(global.db.data.users[m.sender])
       let user, stats = global.db.data.stats
-      if (m) 
+      if (m) {
+        if (m.sender && (user = global.db.data.users[m.sender])) {
+          user.exp += m.exp
+          user.limit -= m.limit * 1
         }
+
+        let stat
         if (m.plugin) {
           let now = + new Date
           if (m.plugin in stats) {
@@ -336,9 +350,9 @@ module.exports = {
         }
         break
       case 'promote':
-        text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is promoted Admin 🤗```')
+        text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is promoted now to Admin🤗```')
       case 'demote':
-        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```sorry you no longer Admin 😔```')
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin🥺```')
         text = text.replace('@user', '@' + participants[0].split('@')[0])
         if (chat.detect) this.sendMessage(jid, text, MessageType.extendedText, {
           contextInfo: {
