@@ -2,7 +2,7 @@ let limit = 30
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 const { servers, yta, ytv } = require('../lib/y2mate')
-let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
+let handler = async (m, { conn, command, text, isPrems, isOwner, isUser }) => {
   if (!text) throw 'What are you looking for?'
   let chat = global.db.data.chats[m.chat]
   let results = await yts(text)
@@ -23,7 +23,7 @@ let handler = async (m, { conn, command, text, isPrems, isOwner }) => {
   }
   if (yt === false) throw 'All servers cannot :/'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-  let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
+  let isLimit = (isPrems || isOwner || isUser ? 99 : limit) * 1024 < filesize
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
@@ -47,7 +47,7 @@ handler.tags = ['downloader']
 handler.command = /^play2?$/i
 
 handler.exp = 0
-handler.limit = true
+handler.limit = false
 
 module.exports = handler
 
