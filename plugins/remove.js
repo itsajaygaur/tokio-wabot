@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
   for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupRemove(m.chat, [user])
 }
 handler.help = ['remove'].map(v => v + ' @user')
-handler.tags = ['admin']
+handler.tags = ['user']
 handler.command = /^(remove|\-)$/i
 
 handler.owner = true
