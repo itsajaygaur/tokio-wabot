@@ -54,6 +54,7 @@
     "lowdb": "^2.1.0",
     "node-fetch": "^2.6.1",
     "node-gtts": "^2.0.2",
+    "node-tesseract-ocr": "^2.2.1",
     "node-webpmux": "^3.1.0",
     "nodemon": "^2.0.13",
     "mongoose": "^6.0.11",
