@@ -172,3 +172,5 @@ Best regards: tokio
 
 
 
+## Thanks To
+* [`@adiwajshing/baileys`](https://gitHub.com/adiwajshing/baileys)
